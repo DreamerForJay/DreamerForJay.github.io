@@ -1,4 +1,4 @@
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, readFileSync, statSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import process from "node:process";
 
@@ -35,11 +35,20 @@ for (const file of htmlFiles) {
     }
   }
 
+  for (const match of html.matchAll(/<iframe\b[^>]*>/gi)) {
+    const tag = match[0];
+    if (!/\btitle="[^"]+"/i.test(tag)) fail(file, `iframe missing title: ${tag}`);
+    if (!/\bloading="lazy"/i.test(tag)) fail(file, `iframe should load lazily: ${tag}`);
+  }
+
   for (const match of html.matchAll(/(?:src|href)="([^"]+)"/gi)) {
     const target = match[1].split(/[?#]/)[0];
     if (!target || /^(?:https?:|mailto:|tel:|#)/i.test(target)) continue;
     const localPath = resolve(root, dirname(file), target);
     if (!existsSync(localPath)) fail(file, `missing local resource "${target}"`);
+    else if (/\.(?:avif|gif|jpe?g|png|webp)$/i.test(localPath) && statSync(localPath).size > 256 * 1024) {
+      fail(file, `image exceeds 256 KiB budget: "${target}"`);
+    }
   }
 }
 
