@@ -1,0 +1,18 @@
+{
+  "name": "Chieh-Lun Yang Portfolio",
+  "short_name": "Chieh-Lun Yang",
+  "description": "Portfolio and blog of Chieh-Lun Yang",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#030711",
+  "theme_color": "#030711",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
