@@ -44,8 +44,11 @@ No application framework or runtime dependency is required in production.
 │   ├── globe.js
 │   ├── main.js
 │   └── menu.js
+├── partials/
+│   └── command-bar.html
 ├── scripts/
-│   └── check-site.mjs
+│   ├── check-site.mjs
+│   └── sync-shell.mjs
 ├── .github/workflows/
 │   └── quality.yml
 ├── manifest.webmanifest
@@ -73,7 +76,8 @@ The site should be served through HTTP instead of opening `index.html` directly 
 Node.js 20 or newer is recommended for local checks.
 
 ```bash
-npm run check
+npm run sync:shell  # propagate shared navigation changes
+npm run check       # validate the complete site
 ```
 
 The check verifies:

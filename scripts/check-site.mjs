@@ -45,6 +45,10 @@ for (const file of htmlFiles) {
 
 const css = readFileSync(resolve(root, "css/style.css"), "utf8");
 if (/^@import/m.test(css)) fail("css/style.css", "avoid render-delaying CSS @import");
+const cssBytes = Buffer.byteLength(css, "utf8");
+if (cssBytes > 56 * 1024) fail("css/style.css", `CSS budget exceeded: ${cssBytes} bytes (limit: 57344)`);
+const responsiveBlocks = (css.match(/@media\s*\(max-width:/g) || []).length;
+if (responsiveBlocks > 27) fail("css/style.css", `too many max-width media blocks: ${responsiveBlocks} (limit: 27)`);
 
 const sitemap = readFileSync(resolve(root, "sitemap.xml"), "utf8");
 for (const file of htmlFiles) {

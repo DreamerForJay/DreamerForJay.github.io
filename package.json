@@ -4,7 +4,9 @@
   "version": "1.0.0",
   "description": "Personal portfolio and blog of Chieh-Lun Yang",
   "scripts": {
-    "check": "node scripts/check-site.mjs && node --check js/main.js && node --check js/blog.js && node --check js/globe.js && node --check js/navigation.js"
+    "sync:shell": "node scripts/sync-shell.mjs",
+    "check:shell": "node scripts/sync-shell.mjs --check",
+    "check": "npm run check:shell && node scripts/check-site.mjs && node --check js/main.js && node --check js/blog.js && node --check js/globe.js && node --check js/navigation.js"
   },
   "engines": {
     "node": ">=20"
