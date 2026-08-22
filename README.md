@@ -38,7 +38,10 @@ No application framework or runtime dependency is required in production.
 │   ├── data/
 │   └── profile/
 ├── css/
-│   └── style.css
+│   ├── foundation.css
+│   ├── portfolio.css
+│   ├── editorial.css
+│   └── responsive.css
 ├── js/
 │   ├── blog.js
 │   ├── globe.js
@@ -108,7 +111,10 @@ When adding a new public page, also add its canonical URL to `sitemap.xml`.
 - Portfolio content and page structure: `index.html`
 - Translations and home interactions: `js/main.js`
 - Blog metadata and filters: `js/blog.js`
-- Visual system and responsive behavior: `css/style.css`
+- Design tokens and shared primitives: `css/foundation.css`
+- Portfolio, experience, education, and project layouts: `css/portfolio.css`
+- Blog, article, menu, and long-form layouts: `css/editorial.css`
+- Final responsive type and control calibration: `css/responsive.css`
 - Images and logos: `assets/`
 
 The Perxona widget uses a browser-visible client key. Keep its deployment restricted to the production domain in the Perxona dashboard and rotate it if the domain or owner changes.
