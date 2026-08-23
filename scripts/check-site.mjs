@@ -52,6 +52,11 @@ for (const file of htmlFiles) {
   }
 }
 
+const homeHtml = readFileSync(resolve(root, "index.html"), "utf8");
+if (/<sv-agent\b/i.test(homeHtml)) fail("index.html", "Avatar must not initialize before user consent");
+if (!/id="avatar-start"/.test(homeHtml)) fail("index.html", "missing explicit Avatar start control");
+if ((homeHtml.match(/class="case-summary"/g) || []).length < 4) fail("index.html", "selected work is missing case-study summaries");
+
 const cssFiles = ["foundation.css", "portfolio.css", "editorial.css", "responsive.css"];
 const css = cssFiles.map((file) => readFileSync(resolve(root, "css", file), "utf8")).join("\n");
 if (/^@import/m.test(css)) fail("css", "avoid render-delaying CSS @import");

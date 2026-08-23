@@ -24,8 +24,8 @@
       workTitle:"把想法做成可驗證的成果。",workIntro:"從真實問題出發，持續實作與迭代。",kinsunDesc:"智慧長照 AI 陪伴系統：以在地語言、記憶確認、安全評估與協作開發，打造更有溫度的日常陪伴。",detoxTitle:"數位防腐劑",
       project1:"智慧記憶項鍊，整合 AI 語音、3D 投影、光導感測與 GPS；負責產品敘事、體驗流程與技術研究，獲 2025 康寧創星家優等獎。",
       project2:"擔任組長，以 AI 使用分析、溫和提醒與注意力轉移三階段方法，協助使用者改善「腦腐」與碎片內容成癮。",
-      project3:"以 PLC、液位感測器與警示元件打造水位變化預先警報系統，獲世界青少年發明展臺灣選拔銅牌。",
-      avatarTitle:"和我的 AI 分身聊聊",avatarBody:"透過 Perxona 互動式 AI Avatar，快速了解我的經歷與作品。",
+      project3:"以 PLC、液位感測器與警示元件打造水位變化預先警報系統，獲世界青少年發明展臺灣選拔銅牌。",kinsunRole:"產品設計、AI 安全與協作開發",kinsunOutcome:"完成可展示的開源互動原型",merlanceRole:"產品敘事、體驗流程與技術研究",merlanceOutcome:"2025 康寧創星家優等獎",detoxRole:"組長、方法設計與使用者體驗",detoxOutcome:"AI Junior Award 2025 參賽成果",ieyiBuild:"PLC 水位偵測與多狀態警報系統",ieyiOutcome:"臺灣選拔銅牌",
+      avatarTitle:"和我的 AI 分身聊聊",avatarBody:"透過 Perxona 互動式 AI Avatar，快速了解我的經歷與作品。",avatarReady:"準備好再開始",avatarConsent:"AI 分身可能使用語音。只有在你按下開始後，系統才會載入並啟動。",avatarStart:"開始 AI 對話",avatarLoading:"正在啟動 AI 分身…",avatarError:"載入失敗，請稍後再試。",
       contactTitle:"歡迎交流合作。",qrTitle:"掃描查看所有聯絡方式",qrBody:"用手機相機掃描，或直接點下方連結。"
     },
     en: {
@@ -45,8 +45,8 @@
       workTitle:"Turning ideas into verifiable outcomes.",workIntro:"Start with a real problem. Build, test, and iterate.",kinsunDesc:"An AI companion for long-term care, combining local-language interaction, memory confirmation, safety evaluation, and collaborative development.",detoxTitle:"Digital Preservative",
       project1:"A smart memory necklace combining AI voice, 3D projection, light-guided sensing, and GPS. I led product storytelling, experience flow, and technical research; Excellence Award at the 2025 Corning Innovation Competition.",
       project2:"As team leader, I developed a three-stage approach using AI usage analysis, gentle nudges, and attention redirection to address brain rot and fragmented-content addiction.",
-      project3:"Built a water-level early-warning system with PLC control, liquid-level sensors, and alert modules; Bronze Medal at the Taiwan selection of the International Exhibition for Young Inventors.",
-      avatarTitle:"Talk with my AI avatar",avatarBody:"Use the interactive Perxona AI avatar to explore my experience and selected work.",
+      project3:"Built a water-level early-warning system with PLC control, liquid-level sensors, and alert modules; Bronze Medal at the Taiwan selection of the International Exhibition for Young Inventors.",kinsunRole:"Product design, AI safety, and collaborative development",kinsunOutcome:"Built a demonstrable open-source interaction prototype",merlanceRole:"Product narrative, experience flow, and technical research",merlanceOutcome:"2025 Corning Innovation Competition Excellence Award",detoxRole:"Team lead, method design, and user experience",detoxOutcome:"AI Junior Award 2025 competition project",ieyiBuild:"PLC water-level sensing and multi-state alert system",ieyiOutcome:"Taiwan Selection Bronze Medal",
+      avatarTitle:"Talk with my AI avatar",avatarBody:"Use the interactive Perxona AI avatar to explore my experience and selected work.",avatarReady:"Start when you are ready",avatarConsent:"The AI avatar may use audio. It only loads and starts after you press the button.",avatarStart:"Start AI conversation",avatarLoading:"Starting the AI avatar…",avatarError:"Unable to load. Please try again later.",
       contactTitle:"Let's build something useful.",qrTitle:"Scan to see every contact",qrBody:"Scan with your phone camera, or open the link below."
     }
   };
@@ -94,26 +94,37 @@
       }), { threshold: 0.12 })
     : null;
   document.querySelectorAll(".reveal").forEach((element) => observer ? observer.observe(element) : element.classList.add("visible"));
-  // Load the below-the-fold avatar SDK only when its section is nearby.
-  const avatarSection = document.querySelector("#avatar");
-  if (avatarSection) {
-    let sdkRequested = false;
-    const loadAvatarSdk = () => {
-      if (sdkRequested) return;
-      sdkRequested = true;
-      const script = document.createElement("script");
-      script.type = "module";
-      script.src = "https://cdn.perxona.ai/asia/prod/latest/widget/entry/index.js";
-      document.head.append(script);
-    };
-    if ("IntersectionObserver" in window) {
-      const avatarObserver = new IntersectionObserver((entries) => {
-        if (entries.some((entry) => entry.isIntersecting)) {
-          loadAvatarSdk();
-          avatarObserver.disconnect();
-        }
-      }, { rootMargin: "800px 0px" });
-      avatarObserver.observe(avatarSection);
-    } else loadAvatarSdk();
-  }
+  // Perxona is created only after an explicit user gesture, preventing surprise audio.
+  const avatarStage = document.querySelector("#avatar-stage");
+  const avatarStart = document.querySelector("#avatar-start");
+  const avatarStatus = document.querySelector("#avatar-status");
+  avatarStart?.addEventListener("click", async () => {
+    avatarStart.disabled = true;
+    avatarStatus.textContent = translations[currentLang].avatarLoading;
+    try {
+      if (!customElements.get("sv-agent")) {
+        const script = document.createElement("script");
+        script.type = "module";
+        script.src = "https://cdn.perxona.ai/asia/prod/latest/widget/entry/index.js";
+        const loaded = new Promise((resolve, reject) => {
+          script.addEventListener("load", resolve, { once: true });
+          script.addEventListener("error", reject, { once: true });
+        });
+        document.head.append(script);
+        await loaded;
+        await Promise.race([
+          customElements.whenDefined("sv-agent"),
+          new Promise((_, reject) => setTimeout(() => reject(new Error("Avatar registration timed out")), 10000))
+        ]);
+      }
+      const agent = document.createElement("sv-agent");
+      agent.setAttribute("agentProfileId", "01KZTWP1ZTSVQWBWG3TS7M5HGF");
+      agent.setAttribute("presentationMode", "embedded");
+      agent.setAttribute("apiKey", "9aa94b29-ab8d-44de-93b8-dc2483a078bc");
+      avatarStage.replaceChildren(agent);
+    } catch {
+      avatarStatus.textContent = translations[currentLang].avatarError;
+      avatarStart.disabled = false;
+    }
+  });
 })();
