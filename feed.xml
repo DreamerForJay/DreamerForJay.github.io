@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Chieh-Lun Yang Blog</title>
+    <link>https://dreamerforjay.github.io/blog.html</link>
+    <description>Notes on technology, competitions, projects, and learning by Chieh-Lun Yang.</description>
+    <language>en</language>
+    <lastBuildDate>Sun, 23 Aug 2026 00:00:00 +0800</lastBuildDate>
+    <atom:link href="https://dreamerforjay.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Competition Notes: Learning Beyond the Result</title>
+      <link>https://dreamerforjay.github.io/blog-competition.html</link>
+      <guid isPermaLink="true">https://dreamerforjay.github.io/blog-competition.html</guid>
+      <pubDate>Thu, 06 Aug 2026 00:00:00 +0800</pubDate>
+      <author>cl.yang04@gmail.com (Chieh-Lun Yang)</author>
+      <category>Competition</category>
+      <category>Reflection</category>
+      <description>The people, decisions, and lessons behind a competition experience.</description>
+    </item>
+  </channel>
+</rss>

@@ -18,7 +18,11 @@ for (const file of htmlFiles) {
   const required = [
     [/<title>[^<]+<\/title>/i, "missing title"],
     [/<meta\s+name="description"\s+content="[^"]+"/i, "missing meta description"],
+    [/<meta\s+name="author"\s+content="[^"]+"/i, "missing author metadata"],
     [/<link\s+rel="canonical"\s+href="https:\/\/dreamerforjay\.github\.io\/[^"]*"/i, "missing production canonical URL"],
+    [/<meta\s+property="og:image:alt"\s+content="[^"]+"/i, "missing Open Graph image alt text"],
+    [/<meta\s+name="twitter:title"\s+content="[^"]+"/i, "missing Twitter title"],
+    [/<link\s+rel="alternate"\s+type="application\/rss\+xml"/i, "missing RSS discovery link"],
   ];
   for (const [pattern, message] of required) if (!pattern.test(html)) fail(file, message);
 
@@ -33,6 +37,10 @@ for (const file of htmlFiles) {
     if (!/\bwidth="\d+"/i.test(tag) || !/\bheight="\d+"/i.test(tag)) {
       fail(file, `image missing intrinsic dimensions: ${tag}`);
     }
+  }
+
+  for (const match of html.matchAll(/<script\s+type="application\/ld\+json">([\s\S]*?)<\/script>/gi)) {
+    try { JSON.parse(match[1]); } catch { fail(file, "invalid JSON-LD"); }
   }
 
   for (const match of html.matchAll(/<iframe\b[^>]*>/gi)) {
@@ -70,6 +78,11 @@ for (const file of htmlFiles) {
   const url = file === "index.html" ? "https://dreamerforjay.github.io/" : `https://dreamerforjay.github.io/${file}`;
   if (!sitemap.includes(`<loc>${url}</loc>`)) fail("sitemap.xml", `missing ${url}`);
 }
+
+const feed = readFileSync(resolve(root, "feed.xml"), "utf8");
+if (!feed.includes("<rss version=\"2.0\"")) fail("feed.xml", "missing RSS 2.0 root");
+if (!feed.includes("https://dreamerforjay.github.io/blog-competition.html")) fail("feed.xml", "missing published article");
+try { JSON.parse(readFileSync(resolve(root, "manifest.webmanifest"), "utf8")); } catch { fail("manifest.webmanifest", "invalid JSON"); }
 
 if (failures.length) {
   console.error(`Site checks failed (${failures.length}):\n- ${failures.join("\n- ")}`);

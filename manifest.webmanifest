@@ -1,12 +1,20 @@
 {
   "name": "Chieh-Lun Yang Portfolio",
   "short_name": "Chieh-Lun Yang",
+  "id": "/",
   "description": "Portfolio and blog of Chieh-Lun Yang",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["portfolio", "education", "technology"],
   "background_color": "#030711",
   "theme_color": "#030711",
+  "shortcuts": [
+    {"name": "Blog", "short_name": "Blog", "url": "/blog.html"},
+    {"name": "Selected work", "short_name": "Work", "url": "/#projects"}
+  ],
   "icons": [
     {
       "src": "assets/favicon.svg",
