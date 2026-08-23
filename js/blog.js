@@ -4,8 +4,8 @@
   const langToggle = document.querySelector('#lang-toggle');
   const qrDialog = document.querySelector('#qr-dialog');
   const copy = {
-    en:{subtitle:'Notes on building, competing, and learning in public.',latest:'Latest writing',search:'Search posts',postTitle:'Competition Notes: Learning Beyond the Result',postSummary:'A record of the competition journey, the teamwork behind it, and what I will carry into the next challenge.',readPost:'Read post →',empty:'No posts match your search.',articleIntro:'This LinkedIn post records the people, decisions, and lessons behind a recent competition experience.'},
-    zh:{subtitle:'記錄技術實作、比賽與持續學習的過程。',latest:'最新文章',search:'搜尋文章',postTitle:'比賽紀錄：結果之外，我學到的事',postSummary:'記錄一次比賽旅程、背後的團隊合作，以及帶往下一次挑戰的經驗。',readPost:'閱讀文章 →',empty:'找不到符合條件的文章。',articleIntro:'這篇 LinkedIn 貼文記錄近期比賽背後的人、決策與學習。'}
+    en:{subtitle:'Notes on building, competing, and learning in public.',latest:'Latest writing',search:'Search posts',postTitle:'Competition Notes: Learning Beyond the Result',postSummary:'A record of the competition journey, the teamwork behind it, and what I will carry into the next challenge.',readPost:'Read post →',empty:'No posts match your search.',articleIntro:'This LinkedIn post records the people, decisions, and lessons behind a recent competition experience.',shareLabel:'SHARE ARTICLE',shareButton:'Share',copyLink:'Copy link',continueTitle:'More from the portfolio'},
+    zh:{subtitle:'記錄技術實作、比賽與持續學習的過程。',latest:'最新文章',search:'搜尋文章',postTitle:'比賽紀錄：結果之外，我學到的事',postSummary:'記錄一次比賽旅程、背後的團隊合作，以及帶往下一次挑戰的經驗。',readPost:'閱讀文章 →',empty:'找不到符合條件的文章。',articleIntro:'這篇 LinkedIn 貼文記錄近期比賽背後的人、決策與學習。',shareLabel:'分享文章',shareButton:'分享',copyLink:'複製連結',continueTitle:'繼續探索作品集'}
   };
   const updateTheme = () => { const dark=root.dataset.theme==='dark'; if(themeToggle) themeToggle.setAttribute('aria-label',dark?'Switch to light theme':'Switch to dark theme'); const meta=document.querySelector('meta[name="theme-color"]'); if(meta) meta.content=dark?'#030711':'#eff7fb'; };
   root.dataset.theme=localStorage.getItem('portfolio-theme-v2')||'dark'; updateTheme();
@@ -19,4 +19,12 @@
   const input=document.querySelector('#blog-search'), cards=[...document.querySelectorAll('[data-post]')], buttons=[...document.querySelectorAll('[data-filter]')], empty=document.querySelector('.blog-empty'); let filter='all';
   const apply=()=>{const q=(input?.value||'').trim().toLowerCase();let shown=0;cards.forEach(card=>{const tags=card.dataset.tags||'',hay=(card.dataset.search+' '+card.textContent).toLowerCase(),okTag=filter==='all'||tags.includes(filter),okQuery=!q||hay.includes(q);card.hidden=!(okTag&&okQuery);if(!card.hidden)shown++;});if(empty)empty.hidden=shown!==0;};
   input?.addEventListener('input',apply); buttons.forEach(b=>b.addEventListener('click',()=>{filter=b.dataset.filter;buttons.forEach(x=>x.classList.toggle('active',x===b));apply();}));
+  const progressBar=document.querySelector('#reading-progress-bar');
+  const updateProgress=()=>{if(!progressBar)return;const max=document.documentElement.scrollHeight-innerHeight;progressBar.style.transform=`scaleX(${max>0?Math.min(scrollY/max,1):0})`;};
+  updateProgress();addEventListener('scroll',updateProgress,{passive:true});addEventListener('resize',updateProgress);
+  const shareData={title:document.title,text:document.querySelector('meta[name="description"]')?.content||'',url:document.querySelector('link[rel="canonical"]')?.href||location.href.split('#')[0]};
+  const shareStatus=document.querySelector('#share-status'),nativeShare=document.querySelector('#native-share'),copyLink=document.querySelector('#copy-link');
+  if(nativeShare&&!navigator.share)nativeShare.hidden=true;
+  nativeShare?.addEventListener('click',async()=>{try{await navigator.share(shareData);}catch(error){if(error.name!=='AbortError'&&shareStatus)shareStatus.textContent=lang==='zh'?'無法開啟分享功能。':'Sharing is unavailable.';}});
+  copyLink?.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(shareData.url);if(shareStatus)shareStatus.textContent=lang==='zh'?'已複製文章連結。':'Article link copied.';}catch{if(shareStatus)shareStatus.textContent=lang==='zh'?'無法複製，請使用網址列。':'Copy failed. Please use the address bar.';}});
 })();

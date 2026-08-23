@@ -65,6 +65,12 @@ if (/<sv-agent\b/i.test(homeHtml)) fail("index.html", "Avatar must not initializ
 if (!/id="avatar-start"/.test(homeHtml)) fail("index.html", "missing explicit Avatar start control");
 if ((homeHtml.match(/class="case-summary"/g) || []).length < 4) fail("index.html", "selected work is missing case-study summaries");
 
+const articleHtml = readFileSync(resolve(root, "blog-competition.html"), "utf8");
+if (!/assets\/social\/blog-competition\.png/.test(articleHtml)) fail("blog-competition.html", "missing dedicated social share image");
+if (!/<meta\s+property="og:image:width"\s+content="1200"/.test(articleHtml) || !/<meta\s+property="og:image:height"\s+content="630"/.test(articleHtml)) fail("blog-competition.html", "social image must declare 1200x630 dimensions");
+if (!/"@type":"BreadcrumbList"/.test(articleHtml)) fail("blog-competition.html", "missing breadcrumb structured data");
+if (!/id="copy-link"/.test(articleHtml) || !/id="article-navigation"/.test(articleHtml)) fail("blog-competition.html", "missing article sharing or navigation controls");
+
 const cssFiles = ["foundation.css", "portfolio.css", "editorial.css", "responsive.css"];
 const css = cssFiles.map((file) => readFileSync(resolve(root, "css", file), "utf8")).join("\n");
 if (/^@import/m.test(css)) fail("css", "avoid render-delaying CSS @import");
