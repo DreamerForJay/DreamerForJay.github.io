@@ -13,7 +13,7 @@
       intro:"資訊工程學系學生｜TMYTEK 研發實習生",
       viewExperience:"查看經歷 ↓",contactMe:"聯絡我 ↗",directoryTitle:"網站目錄",navAbout:"關於我",navExperience:"工作經歷",navEducation:"教育與社群",navProjects:"精選作品",navAvatar:"AI 分身",navContact:"聯絡方式",navAboutSub:"個人簡介與方向",navExperienceSub:"企業與實習經歷",navEducationSub:"社群與專業能力",navProjectsSub:"AI 與工程實作",navAvatarSub:"互動式個人介紹",navContactSub:"社群與電子郵件",
       aboutTitle:"專業摘要",
-      aboutBody:"我喜歡把模糊的問題拆解成可以執行、測試與迭代的方案。從企業實習、校園大使到社群與競賽，我累積了跨團隊溝通、內容策劃、測試自動化與產品實作經驗。工作之外，我喜歡拉麵、旅行、馬拉松、登山與各種運動，也樂於探索新科技與太空知識。",
+      aboutBody:"我喜歡把模糊的問題拆解成可以執行、測試與迭代的方案。從企業實習、校園大使到社群與競賽，我累積了跨團隊溝通、內容策劃、測試自動化與產品實作經驗。工作之外，我喜歡攝影、記錄生活、拉麵、旅行、馬拉松、登山與各種運動，也樂於探索新科技與太空知識。",
       exp1Role:"Research & Development Intern",exp1Time:"2026 / 07 — 現在",exp1Meta:"實習 · 新竹／板橋 · 現場",
       exp1a:"參與毫米波與通訊技術相關產品研發，協助跨據點的工程協作。",exp1b:"將研究需求轉換為可驗證的技術任務，持續紀錄測試與迭代結果。",
       foxconn:"鴻海精密工業 ↗",exp2Time:"2026 / 03 — 現在",hybrid:"實習 · 混合型",exp2a:"撰寫產業趨勢、AI 與自動化技術內容，讓複雜議題更容易被理解。",exp2b:"協助技術研討會、企業說明會與校園講座，促進學生與企業交流。",exp2c:"蒐集學生對技術議題與職涯發展的回饋，提供活動與人才策略參考。",
@@ -34,7 +34,7 @@
       intro:"Computer Science Student | R&D Intern at TMYTEK",
       viewExperience:"View experience ↓",contactMe:"Contact me ↗",directoryTitle:"Portfolio directory",navAbout:"About",navExperience:"Experience",navEducation:"Education & community",navProjects:"Selected work",navAvatar:"AI avatar",navContact:"Contact",navAboutSub:"Profile & focus",navExperienceSub:"Industry roles",navEducationSub:"Community & skills",navProjectsSub:"AI & engineering",navAvatarSub:"Interactive profile",navContactSub:"Social & email",
       aboutTitle:"Profile",
-      aboutBody:"I turn ambiguous problems into plans that can be built, tested, and improved. Through internships, campus ambassador roles, communities, and competitions, I have developed experience in cross-team communication, content planning, test automation, and product implementation. Outside work, I enjoy ramen, travel, marathons, hiking, sports, new technology, and space.",
+      aboutBody:"I turn ambiguous problems into plans that can be built, tested, and improved. Through internships, campus ambassador roles, communities, and competitions, I have developed experience in cross-team communication, content planning, test automation, and product implementation. Outside work, I enjoy photography, documenting everyday life, ramen, travel, marathons, hiking, sports, new technology, and space.",
       exp1Role:"Research & Development Intern",exp1Time:"2026 / 07 — PRESENT",exp1Meta:"Internship · Hsinchu / Banqiao · On-site",
       exp1a:"Contribute to product R&D involving millimeter-wave and communications technologies across engineering sites.",exp1b:"Translate research needs into verifiable technical tasks and document testing and iteration results.",
       foxconn:"Hon Hai Precision Industry ↗",exp2Time:"2026 / 03 — PRESENT",hybrid:"Internship · Hybrid",exp2a:"Create accessible content on industry trends, AI, and automation.",exp2b:"Support technical seminars, employer events, and campus talks that connect students with industry.",exp2c:"Gather student feedback on technology and career development to inform event and talent strategy.",
@@ -74,6 +74,9 @@
     document.querySelectorAll("[data-i18n]").forEach((node) => {
       const value = translations[lang][node.dataset.i18n];
       if (value) node.textContent = value;
+    });
+    document.querySelectorAll(".company-link,.social-links a,.social-links button,.work-meta span,.qr-url").forEach((node) => {
+      node.textContent = node.textContent.replaceAll("↗", "→");
     });
     localStorage.setItem("portfolio-lang-v3", lang);
   };
