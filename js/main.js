@@ -9,10 +9,10 @@
   const translations = {
     zh: {
       available:"OPEN TO COLLABORATION · 2026",surname:"楊杰倫",
-      headline:"把問題弄懂，做出能被使用、也能持續改進的產品。",
-      intro:"資訊工程學系學生，目前於 TMYTEK 擔任研發實習生。專注 AI 應用、軟體測試、產品開發與技術社群。",
+      headline:"AI 應用 · 軟體測試 · 產品開發",
+      intro:"資訊工程學系學生｜TMYTEK 研發實習生",
       viewExperience:"查看經歷 ↓",contactMe:"聯絡我 ↗",directoryTitle:"網站目錄",navAbout:"關於我",navExperience:"工作經歷",navEducation:"教育與社群",navProjects:"精選作品",navAvatar:"AI 分身",navContact:"聯絡方式",navAboutSub:"個人簡介與方向",navExperienceSub:"企業與實習經歷",navEducationSub:"社群與專業能力",navProjectsSub:"AI 與工程實作",navAvatarSub:"互動式個人介紹",navContactSub:"社群與電子郵件",
-      aboutTitle:"先把問題拆清楚，再把事情做好。",
+      aboutTitle:"專業摘要",
       aboutBody:"我喜歡把模糊的問題拆解成可以執行、測試與迭代的方案。從企業實習、校園大使到社群與競賽，我累積了跨團隊溝通、內容策劃、測試自動化與產品實作經驗。工作之外，我喜歡拉麵、旅行、馬拉松、登山與各種運動，也樂於探索新科技與太空知識。",
       exp1Role:"Research & Development Intern",exp1Time:"2026 / 07 — 現在",exp1Meta:"實習 · 新竹／板橋 · 現場",
       exp1a:"參與毫米波與通訊技術相關產品研發，協助跨據點的工程協作。",exp1b:"將研究需求轉換為可驗證的技術任務，持續紀錄測試與迭代結果。",
@@ -30,10 +30,10 @@
     },
     en: {
       available:"OPEN TO COLLABORATION · 2026",surname:"楊杰倫",
-      headline:"Understand the problem. Build something useful. Keep making it better.",
-      intro:"Computer Science student and R&D intern at TMYTEK, focused on applied AI, software testing, product development, and technical communities.",
+      headline:"Applied AI · Software Testing · Product Development",
+      intro:"Computer Science Student | R&D Intern at TMYTEK",
       viewExperience:"View experience ↓",contactMe:"Contact me ↗",directoryTitle:"Portfolio directory",navAbout:"About",navExperience:"Experience",navEducation:"Education & community",navProjects:"Selected work",navAvatar:"AI avatar",navContact:"Contact",navAboutSub:"Profile & focus",navExperienceSub:"Industry roles",navEducationSub:"Community & skills",navProjectsSub:"AI & engineering",navAvatarSub:"Interactive profile",navContactSub:"Social & email",
-      aboutTitle:"Clarify the problem, then do the work well.",
+      aboutTitle:"Profile",
       aboutBody:"I turn ambiguous problems into plans that can be built, tested, and improved. Through internships, campus ambassador roles, communities, and competitions, I have developed experience in cross-team communication, content planning, test automation, and product implementation. Outside work, I enjoy ramen, travel, marathons, hiking, sports, new technology, and space.",
       exp1Role:"Research & Development Intern",exp1Time:"2026 / 07 — PRESENT",exp1Meta:"Internship · Hsinchu / Banqiao · On-site",
       exp1a:"Contribute to product R&D involving millimeter-wave and communications technologies across engineering sites.",exp1b:"Translate research needs into verifiable technical tasks and document testing and iteration results.",
