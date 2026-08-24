@@ -3,7 +3,7 @@
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
   let yaw=-121.301*Math.PI/180, pitch=24.994*Math.PI/180, dragging=false, lastX=0, lastY=0, coastlines=[], frame=0;
-  const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
+  const motionPreference=matchMedia('(prefers-reduced-motion: reduce)'),reducedMotion={matches:true,addEventListener:(...args)=>motionPreference.addEventListener(...args)};
   const toLines=(geometry)=>{if(!geometry)return[];if(geometry.type==='Polygon')return geometry.coordinates;if(geometry.type==='MultiPolygon')return geometry.coordinates.flat();return[];};
   fetch('assets/data/countries.geo.json').then(r=>r.json()).then(data=>{coastlines=data.features.flatMap(f=>toLines(f.geometry));if(reducedMotion.matches)redraw();}).catch(()=>{});
   const project=(lat,lon,r,cx,cy)=>{const cl=Math.cos(lat),a=lon+yaw,x=cl*Math.sin(a),y=Math.sin(lat),z=cl*Math.cos(a),y2=y*Math.cos(pitch)-z*Math.sin(pitch),z2=y*Math.sin(pitch)+z*Math.cos(pitch);return{x:cx+x*r,y:cy-y2*r,z:z2};};
