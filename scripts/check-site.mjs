@@ -63,7 +63,7 @@ for (const file of htmlFiles) {
 const homeHtml = readFileSync(resolve(root, "index.html"), "utf8");
 if (/<sv-agent\b/i.test(homeHtml)) fail("index.html", "Avatar must not initialize before user consent");
 if (!/id="avatar-start"/.test(homeHtml)) fail("index.html", "missing explicit Avatar start control");
-if ((homeHtml.match(/class="case-summary"/g) || []).length < 4) fail("index.html", "selected work is missing case-study summaries");
+if ((homeHtml.match(/class="work-list-item reveal"/g) || []).length < 4) fail("index.html", "selected work is missing compact project rows");
 
 const articleHtml = readFileSync(resolve(root, "blog-competition.html"), "utf8");
 if (!/assets\/social\/blog-competition\.png/.test(articleHtml)) fail("blog-competition.html", "missing dedicated social share image");
