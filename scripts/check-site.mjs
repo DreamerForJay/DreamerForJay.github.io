@@ -64,7 +64,9 @@ const homeHtml = readFileSync(resolve(root, "index.html"), "utf8");
 if (/<sv-agent\b|id="avatar-start"|id="avatar-stage"/i.test(homeHtml)) fail("index.html", "AI avatar must be removed from the homepage");
 if (/globe-card|globe-canvas|js\/globe\.js/i.test(homeHtml)) fail("index.html", "interactive globe must be removed from the homepage");
 if (!/class="competition-list"/.test(homeHtml)) fail("index.html", "competition list is missing");
-if ((homeHtml.match(/class="case-summary"/g) || []).length < 1) fail("index.html", "featured work is missing its case-study summary");
+if (/id="projects"|href="#projects"/.test(homeHtml)) fail("index.html", "the separate projects section must be removed");
+if ((homeHtml.match(/class="competition-heading"/g) || []).length !== 4) fail("index.html", "expected four named competitions");
+if (!/data-i18n="awsCompetition">AWS 黑客松/.test(homeHtml)) fail("index.html", "AWS Hackathon must appear in the competition list");
 
 const articleHtml = readFileSync(resolve(root, "blog-competition.html"), "utf8");
 if (!/assets\/social\/blog-competition\.png/.test(articleHtml)) fail("blog-competition.html", "missing dedicated social share image");

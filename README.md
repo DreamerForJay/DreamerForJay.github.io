@@ -12,7 +12,7 @@ Personal portfolio and blog of **Chieh-Lun Yang (楊杰倫)**, a Computer Scienc
 - Responsive bilingual portfolio for desktop, tablet, and mobile
 - Persistent dark/light theme and language preferences
 - Portrait-led introduction, experience, education, and community leadership
-- Selected work and a scannable competitions and awards list
+- A concise competitions and awards list, including the AWS Hackathon project
 - Searchable, tag-filtered blog and LinkedIn article embed
 - Accessible dialogs, skip links, keyboard focus states, and reduced-motion support
 - Canonical URLs, Open Graph metadata, structured data, sitemap, and robots directives

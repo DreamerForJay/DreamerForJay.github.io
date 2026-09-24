@@ -6,7 +6,7 @@
   const indicator = document.querySelector('#section-indicator');
   const sectionLinks = [...menu.querySelectorAll('a[href^="#"]')];
   const homeLink = menu.querySelector('a[href="index.html"]');
-  const labels = { about: ['ABOUT', '01'], experience: ['EXPERIENCE', '02'], education: ['EDUCATION', '03'], projects: ['WORK', '05'], competitions: ['COMPETITIONS', '06'], contact: ['CONTACT', '08'] };
+  const labels = { about: ['ABOUT', '01'], experience: ['EXPERIENCE', '02'], education: ['EDUCATION', '03'], competitions: ['COMPETITIONS', '05'], contact: ['CONTACT', '07'] };
   const setState = (open) => toggle.setAttribute('aria-expanded', String(open));
   const setCurrent = (id) => {
     const home = id === 'home';
