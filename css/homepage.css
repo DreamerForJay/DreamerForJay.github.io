@@ -43,6 +43,7 @@
 .publication-authors strong{color:var(--text);font-weight:700}
 .publication-link{display:inline-flex;align-items:center;min-height:44px;color:var(--accent);font-size:14px;font-weight:700;text-decoration:underline;text-underline-offset:4px}
 .publication-link:hover,.publication-link:focus-visible{color:var(--text)}
+.publication-actions{display:flex;align-items:center;flex-wrap:wrap;gap:8px 24px}
 .experience-list,.community-list,.competition-list{max-width:1540px}
 .competition-section .section-heading-row{margin-bottom:32px}
 .competition-list{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
@@ -92,6 +93,7 @@
 .home-page .publication-entry h3{margin:0 0 16px;font-size:clamp(22px,2vw,29px);line-height:1.42;overflow-wrap:break-word}
 .home-page .publication-authors,.home-page .publication-summary{max-width:74ch}
 .home-page .publication-link{justify-self:start}
+.home-page .publication-actions{grid-column:2}
 .home-page .experience-list,.home-page .community-list,.home-page .competition-list{max-width:none}
 .home-page .experience-card,.home-page .experience-card.featured,.home-page .community-row,.home-page .community-row:first-child,.home-page .education-row{padding-block:27px!important}
 .home-page .experience-card:hover,.home-page .community-row:hover{background:color-mix(in srgb,var(--accent) 5%,transparent)!important}
@@ -109,8 +111,8 @@
 .home-page .scroll-pipeline-stop.is-current span{transform:none;box-shadow:0 0 0 5px var(--glow)}
 @media(max-width:900px){.home-page .scroll-pipeline{left:max(12px,calc((100vw - 560px)/2));right:max(12px,calc((100vw - 560px)/2))}}
 @media(max-width:900px){
-  .home-page .command-bar{position:relative;top:auto;left:auto;right:auto;width:max-content;max-width:calc(100% - 88px);margin:12px 0 0 20px;transform:none;animation:none}
-  .home-page .hero{padding-top:48px}
+  .home-page .command-bar{position:fixed;top:16px;left:50%;right:auto;width:max-content;max-width:calc(100% - 88px);margin:0;transform:translateX(-50%);animation:none}
+  .home-page .hero{padding-top:116px}
 }
 
 @media(max-width:1000px){
@@ -121,7 +123,7 @@
 }
 @media(max-width:760px){
   .home-page .hero,.home-page main,.home-page .footer{width:min(100% - 40px,620px)}
-  .home-page .hero{grid-template-columns:minmax(0,1fr);gap:32px;padding:42px 0 66px}
+  .home-page .hero{grid-template-columns:minmax(0,1fr);gap:32px;padding:108px 0 66px}
   .home-page .hero-copy{min-width:0}
   .home-page .hero h1{font-size:clamp(58px,11vw,82px)}
   .home-page .hero .hero-focus{font-size:clamp(23px,5vw,29px)}
@@ -131,6 +133,7 @@
   .home-page .publication-entry{grid-template-columns:minmax(0,1fr);padding:28px 24px}
   .home-page .publication-meta{grid-column:1;grid-row:auto;flex-direction:row;align-items:center;margin-bottom:18px}
   .home-page .publication-entry h3,.home-page .publication-authors,.home-page .publication-summary,.home-page .publication-link{grid-column:1}
+  .home-page .publication-actions{grid-column:1}
   .home-page .competition-list li{grid-template-columns:30px minmax(0,1fr);gap:6px 12px}
   .home-page .competition-list li::before{grid-row:1/4}
   .home-page .competition-heading,.home-page .competition-details,.home-page .competition-action{grid-column:2;grid-row:auto}
@@ -138,17 +141,26 @@
   .home-page .scroll-pipeline{left:max(12px,calc((100vw - 560px)/2));right:max(12px,calc((100vw - 560px)/2))}
 }
 @media(max-width:620px){
-  .home-page .command-bar{left:auto;right:auto;display:grid;grid-template-columns:repeat(5,minmax(0,1fr)) 1px repeat(2,minmax(0,1fr));gap:0;width:calc(100% - 80px);max-width:350px;min-height:52px;margin-left:16px;padding:4px 6px}
+  .home-page .command-bar{top:12px;left:16px;right:auto;display:grid;grid-template-columns:repeat(5,minmax(0,1fr)) 1px repeat(2,minmax(0,1fr));gap:0;width:calc(100% - 80px);max-width:350px;min-height:52px;margin:0;padding:4px 6px;transform:none;transition:opacity .2s,visibility .2s,top .2s}
   .home-page .command-bar .icon-link,.home-page .command-bar .text-control{display:grid!important;width:100%;min-width:0;height:44px}
   .home-page .command-bar .icon-link svg{width:20px;height:20px}
   .home-page .command-bar .text-control{font-size:12px}
   .home-page .command-bar .nav-divider{display:block;width:1px;height:24px;margin:0}
   .home-page .menu-cluster{right:16px;top:10px}
   .home-page .section-indicator{display:none}
+  .home-page.toolbar-condensed:not(.toolbar-expanded) .command-bar{opacity:0;visibility:hidden;pointer-events:none}
+  .home-page.toolbar-expanded .command-bar{top:72px;width:calc(100% - 32px);max-width:350px;box-shadow:var(--shadow)}
+  .home-page .quick-links-toggle{position:fixed;z-index:41;top:12px;left:16px;width:48px;height:48px;display:grid;place-items:center;border:1px solid color-mix(in srgb,var(--accent) 55%,var(--line));border-radius:50%;background:var(--surface);color:var(--accent);box-shadow:var(--shadow);cursor:pointer;opacity:0;visibility:hidden;pointer-events:none;transform:scale(.9);transition:opacity .2s,visibility .2s,transform .2s}
+  .home-page.toolbar-condensed .quick-links-toggle{opacity:1;visibility:visible;pointer-events:auto;transform:none}
+  .home-page .quick-links-toggle:hover{background:var(--surface-2)}
+  .home-page .quick-links-toggle svg{width:22px;height:22px}
+  .home-page.toolbar-expanded .quick-links-toggle svg{display:none}
+  .home-page.toolbar-expanded .quick-links-toggle::after{content:"×";font-size:27px;line-height:1}
 }
+.quick-links-toggle{display:none}
 @media(max-width:520px){
   .home-page .hero,.home-page main,.home-page .footer{width:calc(100% - 36px)}
-  .home-page .hero{padding-top:38px;padding-bottom:56px}
+  .home-page .hero{padding-top:108px;padding-bottom:56px}
   .home-page .hero-name-row{padding-right:0}
   .home-page .hero h1{font-size:clamp(54px,13vw,70px)}
   .home-page .hero h1 small{gap:9px;flex-wrap:wrap;font-size:11px;letter-spacing:.12em}
@@ -169,8 +181,9 @@
 }
 @media(max-width:345px){
   .home-page .command-bar{width:calc(100% - 32px);max-width:none}
-  .home-page .menu-cluster{position:absolute;top:74px}
-  .home-page .hero{padding-top:72px}
+  .home-page .menu-cluster{top:74px}
+  .home-page.toolbar-condensed .menu-cluster{top:10px}
+  .home-page .hero{padding-top:160px}
   .home-page .scroll-pipeline{justify-content:flex-start;overflow-x:auto;scrollbar-width:none}
   .home-page .scroll-pipeline::-webkit-scrollbar{display:none}
   .home-page .scroll-pipeline-track{display:none}

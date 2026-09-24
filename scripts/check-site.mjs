@@ -76,6 +76,10 @@ if (pipelineTargets.join(",") !== "top,about,research,experience,education,compe
 for (const target of pipelineTargets) if (!homeHtml.includes(`id="${target}"`)) fail("index.html", `scroll pipeline target #${target} is missing`);
 if (!/href="https:\/\/drive\.google\.com\/file\/d\/1oeJrZB3Lpl4byPH0ESviKNsMiRfYq4e7\/view\?usp=sharing"[^>]*>CV</.test(homeHtml)) fail("index.html", "hero CV link is missing");
 if (!/data-i18n="paperCandidate"/.test(homeHtml)) fail("index.html", "research entry is missing the Best Paper Candidate distinction");
+if (!/href="https:\/\/drive\.google\.com\/file\/d\/1hqpspPz32pJ793_-s1BeKXVpCAPegX2W\/view\?usp=sharing"[^>]*data-i18n="paperPdf"/.test(homeHtml)) fail("index.html", "GEMO3D PDF link is missing");
+if (/<figure class="hero-portrait[^>]*>[\s\S]*?<figcaption>/.test(homeHtml)) fail("index.html", "hero portrait repeats the name in a caption");
+if (!/id="quick-links-toggle"[^>]*aria-controls="quick-links"/.test(homeHtml)) fail("index.html", "mobile quick-links toggle is missing");
+for (const url of ["https://medium.com/@cl.yang04", "https://www.youtube.com/@JAY-uc5um"]) if (!homeHtml.includes(`href="${url}"`)) fail("index.html", `missing social link ${url}`);
 if (!/<nav class="hero-links"[^>]*>[\s\S]*?href="https:\/\/www\.linkedin\.com\/in\/chieh-lun-yang\/"/.test(homeHtml)) fail("index.html", "hero LinkedIn link is missing");
 if ((homeHtml.match(/data-i18n="taRole"/g) || []).length !== 1) fail("index.html", "teaching assistant must appear exactly once in experience");
 if (/data-i18n="educationTa"|<article class="community-row reveal">[\s\S]*?Teaching Assistant/.test(homeHtml)) fail("index.html", "teaching assistant must not be duplicated in education or community");
