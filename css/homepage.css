@@ -108,6 +108,10 @@
 .home-page .scroll-pipeline-stop span{width:28px;height:28px;font-size:9px}
 .home-page .scroll-pipeline-stop.is-current span{transform:none;box-shadow:0 0 0 5px var(--glow)}
 @media(max-width:900px){.home-page .scroll-pipeline{left:max(12px,calc((100vw - 560px)/2));right:max(12px,calc((100vw - 560px)/2))}}
+@media(max-width:900px){
+  .home-page .command-bar{position:relative;top:auto;left:auto;right:auto;width:max-content;max-width:calc(100% - 88px);margin:12px 0 0 20px;transform:none;animation:none}
+  .home-page .hero{padding-top:48px}
+}
 
 @media(max-width:1000px){
   .home-page .hero,.home-page main,.home-page .footer{width:min(100% - 64px,1220px)}
@@ -117,7 +121,7 @@
 }
 @media(max-width:760px){
   .home-page .hero,.home-page main,.home-page .footer{width:min(100% - 40px,620px)}
-  .home-page .hero{grid-template-columns:minmax(0,1fr);gap:32px;padding:108px 0 66px}
+  .home-page .hero{grid-template-columns:minmax(0,1fr);gap:32px;padding:42px 0 66px}
   .home-page .hero-copy{min-width:0}
   .home-page .hero h1{font-size:clamp(58px,11vw,82px)}
   .home-page .hero .hero-focus{font-size:clamp(23px,5vw,29px)}
@@ -134,7 +138,7 @@
   .home-page .scroll-pipeline{left:max(12px,calc((100vw - 560px)/2));right:max(12px,calc((100vw - 560px)/2))}
 }
 @media(max-width:620px){
-  .home-page .command-bar{left:16px;right:auto;transform:none;animation:none;max-width:calc(100% - 80px)}
+  .home-page .command-bar{left:auto;right:auto;max-width:calc(100% - 80px);margin-left:16px}
   .home-page .command-bar .icon-link[href*="instagram.com"],.home-page .command-bar .icon-link[href^="mailto:"],.home-page .command-bar #qr-toggle{display:none!important}
   .home-page .menu-cluster{right:16px;top:10px}
   .home-page .section-indicator{display:none}
@@ -142,7 +146,7 @@
 @media(max-width:520px){
   .home-page .hero,.home-page main,.home-page .footer{width:calc(100% - 36px)}
   .home-page .command-bar .icon-link,.home-page .command-bar .text-control{width:40px;height:40px}
-  .home-page .hero{padding-top:96px;padding-bottom:56px}
+  .home-page .hero{padding-top:38px;padding-bottom:56px}
   .home-page .hero-name-row{padding-right:0}
   .home-page .hero h1{font-size:clamp(54px,13vw,70px)}
   .home-page .hero h1 small{gap:9px;flex-wrap:wrap;font-size:11px;letter-spacing:.12em}
