@@ -64,7 +64,7 @@
 @media(max-width:900px){.scroll-pipeline ~ .footer{padding-bottom:110px}}
 @media(max-width:350px){.scroll-pipeline{right:2px;left:2px;padding-inline:0}}
 @media(max-width:390px){.hero,main,.footer{width:calc(100% - 24px)}.hero h1{font-size:clamp(52px,14vw,65px)}.hero h1 small{font-size:10px;letter-spacing:.12em}.hero-portrait{max-width:100%}.hero-portrait img{height:330px}.hero-links{gap:7px}.hero-links a{padding:9px 12px;font-size:12px}}
-@media(prefers-reduced-motion:reduce){.hero-motto.is-typing::after{animation:none}.scroll-pipeline-fill,.scroll-pipeline-head,.scroll-pipeline-stop{transition:none}}
+@media(prefers-reduced-motion:reduce){.hero-motto.is-typing::after{animation:none}.scroll-pipeline-fill,.scroll-pipeline-head,.scroll-pipeline-stop{transition:none}.home-page .hero-portrait::before{animation:none;transform:rotate(24deg)}}
 
 /* Academic portfolio: quiet canvas, consistent reading width and stronger hierarchy. */
 .home-page{background-image:radial-gradient(ellipse 75% 550px at 50% -180px,color-mix(in srgb,var(--accent) 8%,transparent),transparent 80%);background-attachment:scroll}
@@ -79,8 +79,11 @@
 .home-page .hero-links a:first-child{background:var(--accent);border-color:var(--accent);color:var(--bg)}
 .home-page .hero-links a:first-child::after{color:currentColor}
 .home-page .hero-links a:first-child:hover,.home-page .hero-links a:first-child:focus-visible{background:var(--text);border-color:var(--text);color:var(--bg)}
-.home-page .hero-portrait{max-width:400px;aspect-ratio:1;border-radius:50%;box-shadow:0 18px 50px rgba(0,0,0,.13)}
-.home-page .hero-portrait img{height:auto;aspect-ratio:1;border-radius:50%;object-fit:contain;object-position:center}
+.home-page .hero-portrait{position:relative;isolation:isolate;overflow:hidden;max-width:400px;aspect-ratio:1;padding:8px;border-color:transparent;border-radius:50%;background:var(--surface);box-shadow:0 18px 50px rgba(0,0,0,.13),0 0 34px color-mix(in srgb,var(--accent) 16%,transparent)}
+.home-page .hero-portrait::before{content:"";position:absolute;z-index:0;inset:-45%;background:conic-gradient(from 0deg,transparent 0 34%,color-mix(in srgb,var(--accent) 24%,transparent) 42%,var(--accent) 48%,color-mix(in srgb,#fff 78%,var(--accent)) 50%,var(--accent) 52%,color-mix(in srgb,var(--accent) 24%,transparent) 58%,transparent 66%);animation:portrait-orbit 6.5s linear infinite}
+.home-page .hero-portrait::after{content:"";position:absolute;z-index:2;inset:5px;border:1px solid color-mix(in srgb,var(--accent) 42%,transparent);border-radius:50%;box-shadow:inset 0 0 18px color-mix(in srgb,var(--accent) 14%,transparent);pointer-events:none}
+.home-page .hero-portrait img{position:relative;z-index:1;height:auto;aspect-ratio:1;border-radius:50%;object-fit:contain;object-position:center}
+@keyframes portrait-orbit{to{transform:rotate(1turn)}}
 .home-page .section{padding-block:clamp(66px,6vw,88px)}
 .home-page .section-kicker{margin-bottom:23px;letter-spacing:.18em}
 .home-page .intro-grid{grid-template-columns:minmax(210px,.42fr) minmax(0,.58fr);gap:clamp(48px,7vw,100px)}
@@ -109,7 +112,7 @@
 .home-page .scroll-pipeline{right:clamp(10px,1.4vw,28px)}
 .home-page .scroll-pipeline-stop span{width:28px;height:28px;font-size:9px}
 .home-page .scroll-pipeline-stop.is-current span{transform:none;box-shadow:0 0 0 5px var(--glow)}
-@media(max-width:900px){.home-page .scroll-pipeline{left:max(12px,calc((100vw - 560px)/2));right:max(12px,calc((100vw - 560px)/2))}}
+@media(max-width:900px){.home-page .scroll-pipeline{left:max(12px,calc((100vw - 560px)/2));right:max(12px,calc((100vw - 560px)/2));opacity:0;visibility:hidden;pointer-events:none;transform:translateY(calc(100% + 28px));transition:opacity .25s ease,visibility .25s ease,transform .25s ease}.home-page .scroll-pipeline.is-mobile-visible{opacity:1;visibility:visible;pointer-events:auto;transform:none}}
 @media(max-width:900px){
   .home-page .command-bar{position:fixed;top:16px;left:50%;right:auto;width:max-content;max-width:calc(100% - 88px);margin:0;transform:translateX(-50%);animation:none}
   .home-page .hero{padding-top:116px}
@@ -126,7 +129,7 @@
   .home-page .hero-copy{min-width:0}
   .home-page .hero h1{font-size:clamp(58px,11vw,82px)}
   .home-page .hero .hero-focus{font-size:clamp(23px,5vw,29px)}
-  .home-page .hero-portrait{justify-self:center;width:min(100%,400px)}
+  .home-page .hero-portrait{justify-self:center;width:min(84vw,360px)}
   .home-page .intro-grid{grid-template-columns:minmax(0,1fr);gap:20px}
   .home-page .publication-entry{grid-template-columns:minmax(0,1fr);padding:28px 24px}
   .home-page .publication-meta{grid-column:1;grid-row:auto;flex-direction:row;align-items:center;margin-bottom:18px}

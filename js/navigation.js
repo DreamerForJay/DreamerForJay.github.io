@@ -7,6 +7,8 @@
   const pipeline = document.querySelector('.scroll-pipeline');
   const pipelineStops = [...(pipeline?.querySelectorAll('.scroll-pipeline-stop') || [])];
   const pipelineCaption = pipeline?.querySelector('.scroll-pipeline-caption');
+  const hero = document.querySelector('.hero');
+  const mobilePipeline = matchMedia('(max-width: 900px)');
   const sectionLinks = [...menu.querySelectorAll('a[href^="#"]')];
   const homeLink = menu.querySelector('a[href="index.html"]');
   const labels = { about: ['ABOUT', '01'], research: ['RESEARCH', '02'], experience: ['EXPERIENCE', '03'], education: ['EDUCATION', '04'], competitions: ['COMPETITIONS', '05'], contact: ['CONTACT', '07'] };
@@ -41,6 +43,8 @@
     let current = 'home';
     sections.forEach((section) => { if (section.getBoundingClientRect().top <= marker) current = section.id; });
     if (pipeline) {
+      const heroEnd = hero ? hero.offsetTop + hero.offsetHeight : innerHeight;
+      pipeline.classList.toggle('is-mobile-visible', !mobilePipeline.matches || scrollY >= heroEnd - innerHeight * .18);
       const scrollable = Math.max(1, document.documentElement.scrollHeight - innerHeight);
       const positions = pipelineStops.map((stop) => {
         if (stop.dataset.stage === 'home') return 0;
