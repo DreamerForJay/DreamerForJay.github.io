@@ -6,6 +6,7 @@
   const indicator = document.querySelector('#section-indicator');
   const pipeline = document.querySelector('.scroll-pipeline');
   const pipelineStops = [...(pipeline?.querySelectorAll('.scroll-pipeline-stop') || [])];
+  const pipelineCaption = pipeline?.querySelector('.scroll-pipeline-caption');
   const sectionLinks = [...menu.querySelectorAll('a[href^="#"]')];
   const homeLink = menu.querySelector('a[href="index.html"]');
   const labels = { about: ['ABOUT', '01'], research: ['RESEARCH', '02'], experience: ['EXPERIENCE', '03'], education: ['EDUCATION', '04'], competitions: ['COMPETITIONS', '05'], contact: ['CONTACT', '07'] };
@@ -14,9 +15,15 @@
     const home = id === 'home';
     homeLink?.toggleAttribute('aria-current', home);
     sectionLinks.forEach((link) => link.toggleAttribute('aria-current', link.hash === `#${id}`));
-    pipelineStops.forEach((stop) => stop.classList.toggle('is-current', stop.dataset.stage === id));
+    pipelineStops.forEach((stop) => {
+      const active = stop.dataset.stage === id;
+      stop.classList.toggle('is-current', active);
+      if (active) stop.setAttribute('aria-current', 'location');
+      else stop.removeAttribute('aria-current');
+    });
     const label = home ? ['HOME', '00'] : labels[id];
     if (indicator && label) indicator.textContent = `${label[0]} · ${label[1]}`;
+    if (pipelineCaption && label) pipelineCaption.textContent = `${label[0]} / ${label[1]}`;
     toggle.setAttribute('aria-label', `${home ? 'Home' : label?.[0] || 'Page'} — Open site menu`);
   };
   toggle.addEventListener('click', () => { menu.showModal(); setState(true); });
@@ -30,12 +37,23 @@
   let frame = 0;
   const updateCurrent = () => {
     frame = 0;
-    let current = 'home';
     const marker = innerHeight * .34;
+    let current = 'home';
     sections.forEach((section) => { if (section.getBoundingClientRect().top <= marker) current = section.id; });
     if (pipeline) {
       const scrollable = Math.max(1, document.documentElement.scrollHeight - innerHeight);
-      pipeline.style.setProperty('--scroll-progress', String(Math.min(1, Math.max(0, scrollY / scrollable))));
+      const positions = pipelineStops.map((stop) => {
+        if (stop.dataset.stage === 'home') return 0;
+        const section = document.getElementById(stop.dataset.stage);
+        return section ? Math.min(scrollable, Math.max(0, section.getBoundingClientRect().top + scrollY - marker)) : scrollable;
+      });
+      let stage = 0;
+      positions.forEach((position, index) => { if (scrollY >= position) stage = index; });
+      current = pipelineStops[stage]?.dataset.stage || current;
+      const next = positions[stage + 1];
+      const fraction = next === undefined ? 0 : Math.min(1, Math.max(0, (scrollY - positions[stage]) / Math.max(1, next - positions[stage])));
+      const progress = (stage + fraction) / Math.max(1, pipelineStops.length - 1);
+      pipeline.style.setProperty('--scroll-progress', String(progress));
     }
     setCurrent(current);
   };

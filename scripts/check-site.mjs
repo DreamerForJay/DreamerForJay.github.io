@@ -69,8 +69,12 @@ if ((homeHtml.match(/class="competition-heading"/g) || []).length !== 4) fail("i
 if (!/data-i18n="awsCompetition">AWS 黑客松/.test(homeHtml)) fail("index.html", "AWS Hackathon must appear in the competition list");
 if (!/id="research"[\s\S]*?GEMO3D/.test(homeHtml)) fail("index.html", "GEMO3D research entry is missing");
 if (!/data-i18n="paperTitle"/.test(homeHtml)) fail("index.html", "GEMO3D title must support language switching");
-if (!/class="publication-metrics"/.test(homeHtml)) fail("index.html", "GEMO3D research metrics are missing");
-if (!/class="scroll-pipeline"/.test(homeHtml)) fail("index.html", "scroll progress pipeline is missing");
+if (/class="publication-metrics"/.test(homeHtml)) fail("index.html", "GEMO3D research metrics should stay hidden");
+if (!/<nav class="scroll-pipeline"/.test(homeHtml)) fail("index.html", "scroll chapter navigation is missing");
+const pipelineTargets = [...homeHtml.matchAll(/class="scroll-pipeline-stop"[^>]*href="#([^"]+)"/g)].map((match) => match[1]);
+if (pipelineTargets.join(",") !== "top,about,research,experience,education,competitions,contact") fail("index.html", "scroll pipeline must link to every page chapter in order");
+for (const target of pipelineTargets) if (!homeHtml.includes(`id="${target}"`)) fail("index.html", `scroll pipeline target #${target} is missing`);
+if (!/href="https:\/\/drive\.google\.com\/file\/d\/1oeJrZB3Lpl4byPH0ESviKNsMiRfYq4e7\/view\?usp=sharing"[^>]*>CV</.test(homeHtml)) fail("index.html", "hero CV link is missing");
 if (!/data-i18n="paperCandidate"/.test(homeHtml)) fail("index.html", "research entry is missing the Best Paper Candidate distinction");
 if (!/<nav class="hero-links"[^>]*>[\s\S]*?href="https:\/\/www\.linkedin\.com\/in\/chieh-lun-yang\/"/.test(homeHtml)) fail("index.html", "hero LinkedIn link is missing");
 if ((homeHtml.match(/data-i18n="taRole"/g) || []).length !== 1) fail("index.html", "teaching assistant must appear exactly once in experience");
