@@ -67,6 +67,8 @@ if (!/class="competition-list"/.test(homeHtml)) fail("index.html", "competition 
 if (/id="projects"|href="#projects"/.test(homeHtml)) fail("index.html", "the separate projects section must be removed");
 if ((homeHtml.match(/class="competition-heading"/g) || []).length !== 4) fail("index.html", "expected four named competitions");
 if (!/data-i18n="awsCompetition">AWS 黑客松/.test(homeHtml)) fail("index.html", "AWS Hackathon must appear in the competition list");
+if ((homeHtml.match(/data-i18n="taRole"/g) || []).length !== 1) fail("index.html", "teaching assistant must appear exactly once in experience");
+if (/data-i18n="educationTa"|<article class="community-row reveal">[\s\S]*?Teaching Assistant/.test(homeHtml)) fail("index.html", "teaching assistant must not be duplicated in education or community");
 
 const articleHtml = readFileSync(resolve(root, "blog-competition.html"), "utf8");
 if (!/assets\/social\/blog-competition\.png/.test(articleHtml)) fail("blog-competition.html", "missing dedicated social share image");
