@@ -9,11 +9,11 @@
   const translations = {
     zh: {
       available:"OPEN TO COLLABORATION · 2026",surname:"楊杰倫",
-      headline:"AI 應用 · 軟體測試 · 產品開發",
+      headline:"電腦視覺 · AI 應用 · 軟體測試 · 產品開發",
       intro:"彰師大資訊工程學系學生，現於 TMYTEK 擔任研發實習生，預計加入工研院研究團隊。",
       viewExperience:"查看經歷 ↓",contactMe:"聯絡我 ↗",directoryTitle:"網站目錄",navAbout:"關於我",navExperience:"工作經歷",navEducation:"教育與社群",navProjects:"精選作品",navAvatar:"AI 分身",navContact:"聯絡方式",navAboutSub:"個人簡介與方向",navExperienceSub:"企業與實習經歷",navEducationSub:"社群與專業能力",navProjectsSub:"AI 與工程實作",navAvatarSub:"互動式個人介紹",navContactSub:"社群與電子郵件",
       aboutTitle:"專業摘要",
-      aboutBody:"我在彰師大就讀資訊工程學系，關注 AI 應用、軟體測試與產品實作。目前在 TMYTEK 參與研發與驗證工作，也將於工研院展開研究實習，並擔任『人工智慧及其應用』課程助教。我喜歡把問題拆解成可測試的步驟，透過專案與競賽把想法變成成果。",
+      aboutBody:"我就讀於彰師大資訊工程學系，關注電腦視覺（Computer Vision）、AI 應用、軟體測試與產品開發。參與 GEMO3D 單目 3D 車輛偵測研究，結合深度學習感知與相機幾何。目前在 TMYTEK 參與研發與驗證工作，預計加入工研院擔任研究實習生，並擔任『人工智慧及其應用』課程助教。",
       researchTitle:"研究成果",paperCandidate:"最佳論文候選",paperTitle:"GEMO3D：結合深度學習感知、相機幾何與投影高度比例補償之單目 3D 車輛偵測方法",paperSummary:"將深度學習感知、相機幾何與投影高度比例補償整合成可解釋的單目 3D 車輛偵測流程，並於 CARLA 場景評估。",paperPdf:"閱讀論文 PDF",paperVenue:"CVGIP 2026 研討會",
       exp1Role:"Research & Development Intern",exp1Time:"2026 / 07 — 現在",exp1Meta:"實習 · 新竹／板橋 · 現場",
       exp1a:"參與毫米波與通訊技術相關產品研發，協助跨據點的工程協作。",exp1b:"將研究需求轉換為可驗證的技術任務，持續紀錄測試與迭代結果。",
@@ -29,11 +29,11 @@
     },
     en: {
       available:"OPEN TO COLLABORATION · 2026",surname:"楊杰倫",
-      headline:"Applied AI · Software Testing · Product Development",
+      headline:"Computer Vision · Applied AI · Software Testing · Product Development",
       intro:"Computer Science student at NCUE. R&D Intern at TMYTEK; incoming Research Intern at ITRI.",
       viewExperience:"View experience ↓",contactMe:"Contact me ↗",directoryTitle:"Portfolio directory",navAbout:"About",navExperience:"Experience",navEducation:"Education & community",navProjects:"Selected work",navAvatar:"AI avatar",navContact:"Contact",navAboutSub:"Profile & focus",navExperienceSub:"Industry roles",navEducationSub:"Community & skills",navProjectsSub:"AI & engineering",navAvatarSub:"Interactive profile",navContactSub:"Social & email",
       aboutTitle:"Profile",
-      aboutBody:"I study Computer Science and Information Engineering at NCUE, with a focus on applied AI, software testing, and building useful products. I currently work on R&D and validation at TMYTEK, will join ITRI as a research intern, and serve as a teaching assistant for Artificial Intelligence and Its Applications. I like turning open-ended problems into testable steps and tangible outcomes through projects and competitions.",
+      aboutBody:"I study Computer Science and Information Engineering at NCUE, with interests in computer vision, applied AI, software testing, and product development. I contribute to GEMO3D, a monocular 3D vehicle detection study combining deep learning perception and camera geometry. I currently work on R&D and validation at TMYTEK, will join ITRI as a research intern, and serve as a teaching assistant for Artificial Intelligence and Its Applications.",
       researchTitle:"Research",paperCandidate:"Best Paper Candidate",paperTitle:"GEMO3D: A Monocular 3D Vehicle Detection Method Integrating Deep Learning Perception, Camera Geometry, and Projection Height Ratio Compensation",paperSummary:"An interpretable monocular 3D vehicle detection pipeline combining deep learning perception, camera geometry, and projection height ratio compensation, evaluated in CARLA.",paperPdf:"Read paper PDF",paperVenue:"CVGIP 2026 conference",
       exp1Role:"Research & Development Intern",exp1Time:"2026 / 07 — PRESENT",exp1Meta:"Internship · Hsinchu / Banqiao · On-site",
       exp1a:"Contribute to product R&D involving millimeter-wave and communications technologies across engineering sites.",exp1b:"Translate research needs into verifiable technical tasks and document testing and iteration results.",
