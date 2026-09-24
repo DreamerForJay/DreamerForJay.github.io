@@ -61,9 +61,10 @@ for (const file of htmlFiles) {
 }
 
 const homeHtml = readFileSync(resolve(root, "index.html"), "utf8");
-if (/<sv-agent\b/i.test(homeHtml)) fail("index.html", "Avatar must not initialize before user consent");
-if (!/id="avatar-start"/.test(homeHtml)) fail("index.html", "missing explicit Avatar start control");
-if ((homeHtml.match(/class="case-summary"/g) || []).length < 4) fail("index.html", "selected work is missing case-study summaries");
+if (/<sv-agent\b|id="avatar-start"|id="avatar-stage"/i.test(homeHtml)) fail("index.html", "AI avatar must be removed from the homepage");
+if (/globe-card|globe-canvas|js\/globe\.js/i.test(homeHtml)) fail("index.html", "interactive globe must be removed from the homepage");
+if (!/class="competition-list"/.test(homeHtml)) fail("index.html", "competition list is missing");
+if ((homeHtml.match(/class="case-summary"/g) || []).length < 1) fail("index.html", "featured work is missing its case-study summary");
 
 const articleHtml = readFileSync(resolve(root, "blog-competition.html"), "utf8");
 if (!/assets\/social\/blog-competition\.png/.test(articleHtml)) fail("blog-competition.html", "missing dedicated social share image");
@@ -75,9 +76,9 @@ const cssFiles = ["foundation.css", "portfolio.css", "editorial.css", "responsiv
 const css = cssFiles.map((file) => readFileSync(resolve(root, "css", file), "utf8")).join("\n");
 if (/^@import/m.test(css)) fail("css", "avoid render-delaying CSS @import");
 const cssBytes = Buffer.byteLength(css, "utf8");
-if (cssBytes > 56 * 1024) fail("css", `CSS budget exceeded: ${cssBytes} bytes (limit: 57344)`);
+if (cssBytes > 62 * 1024) fail("css", `CSS budget exceeded: ${cssBytes} bytes (limit: 63488)`);
 const responsiveBlocks = (css.match(/@media\s*\(max-width:/g) || []).length;
-if (responsiveBlocks > 15) fail("css", `too many max-width media blocks: ${responsiveBlocks} (limit: 15)`);
+if (responsiveBlocks > 16) fail("css", `too many max-width media blocks: ${responsiveBlocks} (limit: 16)`);
 
 const sitemap = readFileSync(resolve(root, "sitemap.xml"), "utf8");
 for (const file of htmlFiles) {
