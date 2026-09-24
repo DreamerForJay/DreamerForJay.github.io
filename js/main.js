@@ -10,10 +10,10 @@
     zh: {
       available:"OPEN TO COLLABORATION · 2026",surname:"楊杰倫",
       headline:"AI 應用 · 軟體測試 · 產品開發",
-      intro:"資訊工程學系學生｜TMYTEK 研發實習生",
+      intro:"彰師大資訊工程學系學生，現於 TMYTEK 擔任研發實習生，預計加入工研院研究團隊。",
       viewExperience:"查看經歷 ↓",contactMe:"聯絡我 ↗",directoryTitle:"網站目錄",navAbout:"關於我",navExperience:"工作經歷",navEducation:"教育與社群",navProjects:"精選作品",navAvatar:"AI 分身",navContact:"聯絡方式",navAboutSub:"個人簡介與方向",navExperienceSub:"企業與實習經歷",navEducationSub:"社群與專業能力",navProjectsSub:"AI 與工程實作",navAvatarSub:"互動式個人介紹",navContactSub:"社群與電子郵件",
       aboutTitle:"專業摘要",
-      aboutBody:"我喜歡把模糊的問題拆解成可以執行、測試與迭代的方案。從企業實習、校園大使到社群與競賽，我累積了跨團隊溝通、內容策劃、測試自動化與產品實作經驗。工作之外，我喜歡攝影、記錄生活、拉麵、旅行、馬拉松、登山與各種運動，也樂於探索新科技與太空知識。",
+      aboutBody:"我在彰師大就讀資訊工程學系，關注 AI 應用、軟體測試與產品實作。目前在 TMYTEK 參與研發與驗證工作，也將於工研院展開研究實習，並擔任『人工智慧及其應用』課程助教。我喜歡把問題拆解成可測試的步驟，透過專案與競賽把想法變成成果。",
       exp1Role:"Research & Development Intern",exp1Time:"2026 / 07 — 現在",exp1Meta:"實習 · 新竹／板橋 · 現場",
       exp1a:"參與毫米波與通訊技術相關產品研發，協助跨據點的工程協作。",exp1b:"將研究需求轉換為可驗證的技術任務，持續紀錄測試與迭代結果。",
       exp2Role:"鴻海未來人才計畫成員",exp3Role:"校園大使｜職涯課程組",exp4Role:"資訊科技實習生",exp5Role:"校園大使｜技術組",
@@ -26,16 +26,16 @@
       project1:"智慧記憶項鍊，整合 AI 語音、3D 投影、光導感測與 GPS；負責產品敘事、體驗流程與技術研究，獲 2025 康寧創星家優等獎。",
       project2:"擔任組長，以 AI 使用分析、溫和提醒與注意力轉移三階段方法，協助使用者改善「腦腐」與碎片內容成癮。",
       project3:"以 PLC、液位感測器與警示元件打造水位變化預先警報系統，獲世界青少年發明展臺灣選拔銅牌。",kinsunRole:"產品設計、AI 安全與協作開發",kinsunOutcome:"完成可展示的開源互動原型",merlanceRole:"產品敘事、體驗流程與技術研究",merlanceOutcome:"2025 康寧創星家優等獎",detoxRole:"組長、方法設計與使用者體驗",detoxOutcome:"AI Junior Award 2025 參賽成果",ieyiBuild:"PLC 水位偵測與多狀態警報系統",ieyiOutcome:"臺灣選拔銅牌",
-      avatarTitle:"和我的 AI 分身聊聊",avatarBody:"透過 Perxona 互動式 AI Avatar，快速了解我的經歷與作品。",avatarReady:"準備好再開始",avatarConsent:"AI 分身可能使用語音。只有在你按下開始後，系統才會載入並啟動。",avatarStart:"開始 AI 對話",avatarLoading:"正在啟動 AI 分身…",avatarError:"載入失敗，請稍後再試。",
+      competitionTitle:"競賽與成果",competitionIntro:"精選競賽作品、獎項與參與成果。",corningResult:"康寧創星家競賽 · 優等獎",ieyiTitle:"世界青少年發明展",ieyiResult:"臺灣選拔 · 銅牌",watchVideo:"觀看作品影片 ↗",
       contactTitle:"歡迎交流合作。",qrTitle:"掃描查看所有聯絡方式",qrBody:"用手機相機掃描，或直接點下方連結。"
     },
     en: {
       available:"OPEN TO COLLABORATION · 2026",surname:"楊杰倫",
       headline:"Applied AI · Software Testing · Product Development",
-      intro:"Computer Science Student | R&D Intern at TMYTEK",
+      intro:"Computer Science student at NCUE. R&D Intern at TMYTEK; incoming Research Intern at ITRI.",
       viewExperience:"View experience ↓",contactMe:"Contact me ↗",directoryTitle:"Portfolio directory",navAbout:"About",navExperience:"Experience",navEducation:"Education & community",navProjects:"Selected work",navAvatar:"AI avatar",navContact:"Contact",navAboutSub:"Profile & focus",navExperienceSub:"Industry roles",navEducationSub:"Community & skills",navProjectsSub:"AI & engineering",navAvatarSub:"Interactive profile",navContactSub:"Social & email",
       aboutTitle:"Profile",
-      aboutBody:"I turn ambiguous problems into plans that can be built, tested, and improved. Through internships, campus ambassador roles, communities, and competitions, I have developed experience in cross-team communication, content planning, test automation, and product implementation. Outside work, I enjoy photography, documenting everyday life, ramen, travel, marathons, hiking, sports, new technology, and space.",
+      aboutBody:"I study Computer Science and Information Engineering at NCUE, with a focus on applied AI, software testing, and building useful products. I currently work on R&D and validation at TMYTEK, will join ITRI as a research intern, and serve as a teaching assistant for Artificial Intelligence and Its Applications. I like turning open-ended problems into testable steps and tangible outcomes through projects and competitions.",
       exp1Role:"Research & Development Intern",exp1Time:"2026 / 07 — PRESENT",exp1Meta:"Internship · Hsinchu / Banqiao · On-site",
       exp1a:"Contribute to product R&D involving millimeter-wave and communications technologies across engineering sites.",exp1b:"Translate research needs into verifiable technical tasks and document testing and iteration results.",
       exp2Role:"Future Talent Program Associate",exp3Role:"Campus Ambassador | Career Program",exp4Role:"Information Technology Intern",exp5Role:"Campus Ambassador | Technical Group",
@@ -48,7 +48,7 @@
       project1:"A smart memory necklace combining AI voice, 3D projection, light-guided sensing, and GPS. I led product storytelling, experience flow, and technical research; Excellence Award at the 2025 Corning Innovation Competition.",
       project2:"As team leader, I developed a three-stage approach using AI usage analysis, gentle nudges, and attention redirection to address brain rot and fragmented-content addiction.",
       project3:"Built a water-level early-warning system with PLC control, liquid-level sensors, and alert modules; Bronze Medal at the Taiwan selection of the International Exhibition for Young Inventors.",kinsunRole:"Product design, AI safety, and collaborative development",kinsunOutcome:"Built a demonstrable open-source interaction prototype",merlanceRole:"Product narrative, experience flow, and technical research",merlanceOutcome:"2025 Corning Innovation Competition Excellence Award",detoxRole:"Team lead, method design, and user experience",detoxOutcome:"AI Junior Award 2025 competition project",ieyiBuild:"PLC water-level sensing and multi-state alert system",ieyiOutcome:"Taiwan Selection Bronze Medal",
-      avatarTitle:"Talk with my AI avatar",avatarBody:"Use the interactive Perxona AI avatar to explore my experience and selected work.",avatarReady:"Start when you are ready",avatarConsent:"The AI avatar may use audio. It only loads and starts after you press the button.",avatarStart:"Start AI conversation",avatarLoading:"Starting the AI avatar…",avatarError:"Unable to load. Please try again later.",
+      competitionTitle:"Competitions & awards",competitionIntro:"Selected competition projects and recognized outcomes.",corningResult:"Corning Innovation Competition · Excellence Award",ieyiTitle:"World Young Inventors Exhibition",ieyiResult:"Taiwan Selection · Bronze Medal",watchVideo:"Watch project video ↗",
       contactTitle:"Let's build something useful.",qrTitle:"Scan to see every contact",qrBody:"Scan with your phone camera, or open the link below."
     }
   };
@@ -105,37 +105,4 @@
       }), { threshold: 0.12 })
     : null;
   document.querySelectorAll(".reveal").forEach((element) => observer ? observer.observe(element) : element.classList.add("visible"));
-  // Perxona is created only after an explicit user gesture, preventing surprise audio.
-  const avatarStage = document.querySelector("#avatar-stage");
-  const avatarStart = document.querySelector("#avatar-start");
-  const avatarStatus = document.querySelector("#avatar-status");
-  avatarStart?.addEventListener("click", async () => {
-    avatarStart.disabled = true;
-    avatarStatus.textContent = translations[currentLang].avatarLoading;
-    try {
-      if (!customElements.get("sv-agent")) {
-        const script = document.createElement("script");
-        script.type = "module";
-        script.src = "https://cdn.perxona.ai/asia/prod/latest/widget/entry/index.js";
-        const loaded = new Promise((resolve, reject) => {
-          script.addEventListener("load", resolve, { once: true });
-          script.addEventListener("error", reject, { once: true });
-        });
-        document.head.append(script);
-        await loaded;
-        await Promise.race([
-          customElements.whenDefined("sv-agent"),
-          new Promise((_, reject) => setTimeout(() => reject(new Error("Avatar registration timed out")), 10000))
-        ]);
-      }
-      const agent = document.createElement("sv-agent");
-      agent.setAttribute("agentProfileId", "01KZTWP1ZTSVQWBWG3TS7M5HGF");
-      agent.setAttribute("presentationMode", "embedded");
-      agent.setAttribute("apiKey", "9aa94b29-ab8d-44de-93b8-dc2483a078bc");
-      avatarStage.replaceChildren(agent);
-    } catch {
-      avatarStatus.textContent = translations[currentLang].avatarError;
-      avatarStart.disabled = false;
-    }
-  });
 })();

@@ -79,24 +79,3 @@ a.work-list-item:hover,a.work-list-item:focus-visible{padding-inline:18px;backgr
 /* Balanced project showcase: one lead story, two supporting stories, one award */
 .work-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.work-featured{grid-column:1/-1;grid-row:auto;display:grid;grid-template-columns:1.06fr .94fr}.work-featured .work-visual{min-height:340px}.work-featured .work-content{justify-content:center}.video-card{grid-template-columns:minmax(190px,42%) minmax(0,1fr)}.video-thumb{min-height:390px}.video-card .work-content{padding:24px}.video-card h3{font-size:32px}.video-card .case-summary div{grid-template-columns:60px 1fr}.award-card{min-height:230px}.award-card .work-content{justify-content:center}
 main>.section,.footer[id]{scroll-margin-top:90px}main>.section{content-visibility:auto;contain-intrinsic-size:auto 800px}
-/* Homepage updates: a larger portrait, a focused hero, and readable competition bullets. */
-.hero{grid-template-columns:1fr;min-height:auto;padding-block:clamp(100px,12vw,150px) 110px}
-.hero-copy{max-width:1080px}
-.hero-name-row{align-items:center;gap:34px}
-.hero-name-row h1{flex:1}
-.hero-avatar{width:180px;height:180px;margin:0;border-radius:24px}
-.brand-itri{background:#fff;padding:8px}
-.brand-itri img{display:block;width:100%;height:100%;object-fit:contain}
-.projects-section .work-grid{grid-template-columns:1fr}
-.projects-section .work-featured{grid-row:auto}
-.competition-list{max-width:1040px;margin-top:70px}
-.competition-list .section-kicker{margin-bottom:24px}
-.competition-list ul{margin:0;padding:0 0 0 25px;border-top:1px solid var(--line)}
-.competition-list li{padding:22px 0 22px 8px;border-bottom:1px solid var(--line);color:var(--muted)}
-.competition-list li::marker{color:var(--accent);font-size:1.1em}
-.competition-list h3{margin:0 0 8px;color:var(--text);font-size:clamp(21px,2.5vw,31px);line-height:1.25}
-.competition-list h3 span{color:var(--accent);font:700 10px "Space Mono",monospace;letter-spacing:.08em}
-.competition-list p{max-width:850px;margin:0 0 10px;color:var(--muted);line-height:1.7}
-.competition-list a{color:var(--accent);font-size:13px;font-weight:700;text-decoration:none}
-.competition-list a:hover{text-decoration:underline}
-@media(max-width:620px){.hero{padding-block:82px 70px}.hero-name-row{align-items:flex-start;gap:16px}.hero-avatar{width:120px;height:140px;border-radius:18px}.competition-list{margin-top:52px}.competition-list ul{padding-left:20px}.competition-list li{padding-left:4px}.competition-list h3 span{display:block;margin-top:5px;line-height:1.4}}

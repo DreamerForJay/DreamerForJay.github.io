@@ -1,0 +1,35 @@
+/* Homepage composition: portrait-led introduction and scannable achievements. */
+.hero{width:min(1180px,calc(100% - 48px));min-height:0;display:grid;grid-template-columns:minmax(0,1.45fr) minmax(290px,.7fr);gap:clamp(38px,5vw,80px);align-items:center;padding:clamp(125px,12vw,170px) 0 100px}
+.hero-copy{min-width:0}
+.hero-name-row{padding:0;display:block}
+.hero h1{font-size:clamp(66px,7.4vw,108px);margin:28px 0 38px}
+.hero h1 small{margin-top:22px;letter-spacing:.23em}
+.hero .hero-focus{font-size:clamp(25px,2.7vw,38px);line-height:1.3;max-width:680px;margin-bottom:20px}
+.hero-intro{font-size:clamp(17px,1.7vw,21px);line-height:1.65}
+.hero-motto{margin-top:21px}
+.hero-links{display:flex;flex-wrap:wrap;gap:9px;margin-top:34px}
+.hero-links a{min-height:44px;display:inline-flex;align-items:center;gap:8px;padding:11px 16px;border:1px solid var(--line);border-radius:999px;background:color-mix(in srgb,var(--surface) 76%,transparent);color:var(--text);font-size:13px;font-weight:700;text-decoration:none;transition:background .2s,border-color .2s,color .2s}
+.hero-links a:hover,.hero-links a:focus-visible{background:var(--surface-2);border-color:var(--accent);color:var(--accent)}
+.hero-links a span{color:var(--accent)}
+.hero-portrait{width:100%;max-width:365px;justify-self:end;margin:0;padding:10px;border:1px solid color-mix(in srgb,var(--accent) 33%,var(--line));border-radius:29px;background:color-mix(in srgb,var(--surface) 90%,transparent);box-shadow:0 30px 70px rgba(0,0,0,.24)}
+.hero-portrait img{display:block;width:100%;height:clamp(340px,31vw,405px);border-radius:20px;object-fit:cover;object-position:center 23%;background:var(--surface-2)}
+.hero-portrait figcaption{display:flex;justify-content:space-between;gap:12px;padding:14px 9px 5px;color:var(--muted);font:700 10px "Space Mono",monospace;letter-spacing:.1em}
+.hero-portrait figcaption span{color:var(--accent)}
+.brand-itri{padding:8px;background:#fff}
+.brand-itri img{display:block;width:100%;height:100%;object-fit:contain}
+.projects-section .work-grid{grid-template-columns:1fr}
+.projects-section .work-featured{grid-row:auto}
+.competition-section .section-heading-row{margin-bottom:26px}
+.competition-list{max-width:1050px;margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.competition-list li{display:grid;grid-template-columns:74px minmax(0,1fr);gap:24px;padding:27px 6px;border-bottom:1px solid var(--line)}
+.competition-year{padding-top:5px;color:var(--accent);font:700 12px "Space Mono",monospace;letter-spacing:.08em}
+.competition-copy{position:relative;padding-left:22px}
+.competition-copy:before{content:"";position:absolute;left:0;top:.65em;width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.competition-heading{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px 14px}
+.competition-heading h3{margin:0;font-size:clamp(22px,2.4vw,29px);line-height:1.3}
+.competition-result{padding:4px 9px;border:1px solid var(--line);border-radius:999px;color:var(--accent);font:700 10px "Space Mono",monospace;letter-spacing:.03em}
+.competition-copy p{max-width:780px;margin:10px 0 7px;color:var(--muted);line-height:1.65}
+.competition-copy a{display:inline-block;padding:5px 0;color:var(--accent);font-size:13px;font-weight:700;text-underline-offset:4px}
+@media(max-width:900px){.hero{grid-template-columns:minmax(0,1fr) minmax(230px,.55fr);gap:28px}.hero h1{font-size:clamp(58px,8vw,78px)}.hero-portrait img{height:330px}}
+@media(max-width:700px){.hero{grid-template-columns:1fr;gap:38px;padding-top:92px;padding-bottom:72px}.hero h1{font-size:clamp(58px,12vw,84px);margin-bottom:28px}.hero-portrait{justify-self:start;max-width:330px}.hero-portrait img{height:340px}.competition-list li{grid-template-columns:1fr;gap:8px}.competition-copy{padding-left:18px}.competition-year{padding-left:18px}.competition-copy:before{top:.75em}}
+@media(max-width:390px){.hero,.competition-section{width:min(100% - 24px,1180px)}.hero h1{font-size:clamp(52px,14vw,65px)}.hero h1 small{font-size:10px;letter-spacing:.12em}.hero-portrait{max-width:100%}.hero-portrait img{height:330px}.hero-links{gap:7px}.hero-links a{padding:9px 12px;font-size:12px}}

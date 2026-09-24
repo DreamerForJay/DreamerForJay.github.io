@@ -11,10 +11,9 @@ Personal portfolio and blog of **Chieh-Lun Yang (楊杰倫)**, a Computer Scienc
 
 - Responsive bilingual portfolio for desktop, tablet, and mobile
 - Persistent dark/light theme and language preferences
-- Work experience, education, community leadership, and selected projects
-- Interactive globe centered on Taoyuan, Taiwan with local date and time
+- Portrait-led introduction, experience, education, and community leadership
+- Selected work and a scannable competitions and awards list
 - Searchable, tag-filtered blog and LinkedIn article embed
-- Lazy-loaded Perxona AI avatar widget
 - Accessible dialogs, skip links, keyboard focus states, and reduced-motion support
 - Canonical URLs, Open Graph metadata, structured data, sitemap, and robots directives
 
@@ -23,7 +22,6 @@ Personal portfolio and blog of **Chieh-Lun Yang (楊杰倫)**, a Computer Scienc
 - Semantic HTML5
 - Modern CSS with responsive layouts and design tokens
 - Vanilla JavaScript
-- Canvas-based interactive globe
 - GitHub Pages
 
 No application framework or runtime dependency is required in production.
@@ -41,10 +39,10 @@ No application framework or runtime dependency is required in production.
 │   ├── foundation.css
 │   ├── portfolio.css
 │   ├── editorial.css
-│   └── responsive.css
+│   ├── responsive.css
+│   └── homepage.css
 ├── js/
 │   ├── blog.js
-│   ├── globe.js
 │   ├── main.js
 │   └── menu.js
 ├── partials/
@@ -72,7 +70,7 @@ python -m http.server 8080
 
 Then open [http://localhost:8080](http://localhost:8080).
 
-The site should be served through HTTP instead of opening `index.html` directly because the globe loads local GeoJSON data.
+Serve the site through HTTP to match its GitHub Pages environment.
 
 ## Quality checks
 
@@ -115,9 +113,8 @@ When adding a new public page, also add its canonical URL to `sitemap.xml`.
 - Portfolio, experience, education, and project layouts: `css/portfolio.css`
 - Blog, article, menu, and long-form layouts: `css/editorial.css`
 - Final responsive type and control calibration: `css/responsive.css`
+- Homepage portrait and competition list: `css/homepage.css`
 - Images and logos: `assets/`
-
-The Perxona widget uses a browser-visible client key. Keep its deployment restricted to the production domain in the Perxona dashboard and rotate it if the domain or owner changes.
 
 ## License
 
