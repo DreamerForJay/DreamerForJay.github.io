@@ -138,14 +138,16 @@
   .home-page .scroll-pipeline{left:max(12px,calc((100vw - 560px)/2));right:max(12px,calc((100vw - 560px)/2))}
 }
 @media(max-width:620px){
-  .home-page .command-bar{left:auto;right:auto;max-width:calc(100% - 80px);margin-left:16px}
-  .home-page .command-bar .icon-link[href*="instagram.com"],.home-page .command-bar .icon-link[href^="mailto:"],.home-page .command-bar #qr-toggle{display:none!important}
+  .home-page .command-bar{left:auto;right:auto;display:grid;grid-template-columns:repeat(5,minmax(0,1fr)) 1px repeat(2,minmax(0,1fr));gap:0;width:calc(100% - 80px);max-width:350px;min-height:52px;margin-left:16px;padding:4px 6px}
+  .home-page .command-bar .icon-link,.home-page .command-bar .text-control{display:grid!important;width:100%;min-width:0;height:44px}
+  .home-page .command-bar .icon-link svg{width:20px;height:20px}
+  .home-page .command-bar .text-control{font-size:12px}
+  .home-page .command-bar .nav-divider{display:block;width:1px;height:24px;margin:0}
   .home-page .menu-cluster{right:16px;top:10px}
   .home-page .section-indicator{display:none}
 }
 @media(max-width:520px){
   .home-page .hero,.home-page main,.home-page .footer{width:calc(100% - 36px)}
-  .home-page .command-bar .icon-link,.home-page .command-bar .text-control{width:40px;height:40px}
   .home-page .hero{padding-top:38px;padding-bottom:56px}
   .home-page .hero-name-row{padding-right:0}
   .home-page .hero h1{font-size:clamp(54px,13vw,70px)}
@@ -166,6 +168,9 @@
   .home-page .footer{padding-bottom:108px}
 }
 @media(max-width:345px){
+  .home-page .command-bar{width:calc(100% - 32px);max-width:none}
+  .home-page .menu-cluster{position:absolute;top:74px}
+  .home-page .hero{padding-top:72px}
   .home-page .scroll-pipeline{justify-content:flex-start;overflow-x:auto;scrollbar-width:none}
   .home-page .scroll-pipeline::-webkit-scrollbar{display:none}
   .home-page .scroll-pipeline-track{display:none}
