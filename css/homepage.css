@@ -64,7 +64,7 @@
 @media(max-width:900px){.scroll-pipeline ~ .footer{padding-bottom:110px}}
 @media(max-width:350px){.scroll-pipeline{right:2px;left:2px;padding-inline:0}}
 @media(max-width:390px){.hero,main,.footer{width:calc(100% - 24px)}.hero h1{font-size:clamp(52px,14vw,65px)}.hero h1 small{font-size:10px;letter-spacing:.12em}.hero-portrait{max-width:100%}.hero-portrait img{height:330px}.hero-links{gap:7px}.hero-links a{padding:9px 12px;font-size:12px}}
-@media(prefers-reduced-motion:reduce){.hero-motto.is-typing::after{animation:none}.scroll-pipeline-fill,.scroll-pipeline-head,.scroll-pipeline-stop{transition:none}.home-page .hero-portrait::before{animation:none;transform:rotate(24deg)}}
+@media(prefers-reduced-motion:reduce){.hero-motto.is-typing::after{animation:none}.scroll-pipeline-fill,.scroll-pipeline-head,.scroll-pipeline-stop{transition:none}}
 
 /* Academic portfolio: quiet canvas, consistent reading width and stronger hierarchy. */
 .home-page{background-image:radial-gradient(ellipse 75% 550px at 50% -180px,color-mix(in srgb,var(--accent) 8%,transparent),transparent 80%);background-attachment:scroll}
@@ -79,11 +79,8 @@
 .home-page .hero-links a:first-child{background:var(--accent);border-color:var(--accent);color:var(--bg)}
 .home-page .hero-links a:first-child::after{color:currentColor}
 .home-page .hero-links a:first-child:hover,.home-page .hero-links a:first-child:focus-visible{background:var(--text);border-color:var(--text);color:var(--bg)}
-.home-page .hero-portrait{position:relative;isolation:isolate;overflow:hidden;max-width:400px;aspect-ratio:1;padding:8px;border-color:transparent;border-radius:50%;background:var(--surface);box-shadow:0 18px 50px rgba(0,0,0,.13),0 0 34px color-mix(in srgb,var(--accent) 16%,transparent)}
-.home-page .hero-portrait::before{content:"";position:absolute;z-index:0;inset:-45%;background:conic-gradient(from 0deg,transparent 0 34%,color-mix(in srgb,var(--accent) 24%,transparent) 42%,var(--accent) 48%,color-mix(in srgb,#fff 78%,var(--accent)) 50%,var(--accent) 52%,color-mix(in srgb,var(--accent) 24%,transparent) 58%,transparent 66%);animation:portrait-orbit 6.5s linear infinite}
-.home-page .hero-portrait::after{content:"";position:absolute;z-index:2;inset:5px;border:1px solid color-mix(in srgb,var(--accent) 42%,transparent);border-radius:50%;box-shadow:inset 0 0 18px color-mix(in srgb,var(--accent) 14%,transparent);pointer-events:none}
-.home-page .hero-portrait img{position:relative;z-index:1;height:auto;aspect-ratio:1;border-radius:50%;object-fit:contain;object-position:center}
-@keyframes portrait-orbit{to{transform:rotate(1turn)}}
+.home-page .hero-portrait{max-width:400px;aspect-ratio:1;padding:6px;border-color:color-mix(in srgb,var(--accent) 38%,var(--line));border-radius:50%;background:var(--surface);box-shadow:0 16px 36px rgba(0,0,0,.16)}
+.home-page .hero-portrait img{height:auto;aspect-ratio:1;border-radius:50%;object-fit:contain;object-position:center}
 .home-page .section{padding-block:clamp(66px,6vw,88px)}
 .home-page .section-kicker{margin-bottom:23px;letter-spacing:.18em}
 .home-page .intro-grid{grid-template-columns:minmax(210px,.42fr) minmax(0,.58fr);gap:clamp(48px,7vw,100px)}
@@ -125,11 +122,17 @@
 }
 @media(max-width:760px){
   .home-page .hero,.home-page main,.home-page .footer{width:min(100% - 40px,620px)}
-  .home-page .hero{grid-template-columns:minmax(0,1fr);gap:24px;padding:104px 0 58px}
-  .home-page .hero-copy{min-width:0}
-  .home-page .hero h1{font-size:clamp(58px,11vw,82px)}
-  .home-page .hero .hero-focus{font-size:clamp(23px,5vw,29px)}
-  .home-page .hero-portrait{order:-1;justify-self:center;width:clamp(156px,44vw,190px)}
+  .home-page .hero{grid-template-columns:minmax(0,1fr) clamp(116px,32vw,168px);column-gap:16px;row-gap:22px;align-items:center;padding:104px 0 58px}
+  .home-page .hero-copy{display:contents;opacity:1;transform:none}
+  .home-page .hero-copy>.eyebrow{grid-column:1/-1;grid-row:1}
+  .home-page .hero-name-row{grid-column:1;grid-row:2;align-self:center}
+  .home-page .hero h1{margin:0;font-size:clamp(46px,12vw,60px)}
+  .home-page .hero h1 small{margin-top:14px}
+  .home-page .hero-portrait{grid-column:2;grid-row:2;justify-self:end;width:100%;margin:0}
+  .home-page .hero-copy>.hero-focus{grid-column:1/-1;grid-row:3;margin:4px 0 0;font-size:clamp(23px,5vw,29px)}
+  .home-page .hero-copy>.hero-intro{grid-column:1/-1;grid-row:4;margin:0}
+  .home-page .hero-copy>.hero-motto{grid-column:1/-1;grid-row:5;margin:0}
+  .home-page .hero-copy>.hero-links{grid-column:1/-1;grid-row:6;margin-top:0}
   .home-page main>.section{content-visibility:visible;contain:none;border-top:0}
   .home-page .intro-grid{grid-template-columns:minmax(0,1fr);gap:20px}
   .home-page .publication-entry{grid-template-columns:minmax(0,1fr);padding:28px 24px}
@@ -164,7 +167,7 @@
   .home-page .hero,.home-page main,.home-page .footer{width:calc(100% - 36px)}
   .home-page .hero{padding-top:92px;padding-bottom:52px}
   .home-page .hero-name-row{padding-right:0}
-  .home-page .hero h1{font-size:clamp(54px,13vw,70px)}
+  .home-page .hero h1{font-size:clamp(46px,12vw,56px)}
   .home-page .hero h1 small{gap:9px;flex-wrap:wrap;font-size:11px;letter-spacing:.12em}
   .home-page .hero .hero-focus{font-size:clamp(23px,6vw,29px)}
   .home-page .hero-intro{font-size:16px;overflow-wrap:break-word}
