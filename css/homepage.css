@@ -94,6 +94,7 @@
 .home-page .publication-authors,.home-page .publication-summary{max-width:74ch}
 .home-page .publication-link{justify-self:start}
 .home-page .publication-actions{grid-column:2}
+.home-page .publication-entry+.publication-entry{margin-top:22px}
 .home-page .experience-list,.home-page .community-list,.home-page .competition-list{max-width:none}
 .home-page .experience-card,.home-page .experience-card.featured,.home-page .community-row,.home-page .community-row:first-child,.home-page .education-row{padding-block:27px!important}
 .home-page .experience-card:hover,.home-page .community-row:hover{background:color-mix(in srgb,var(--accent) 5%,transparent)!important}
