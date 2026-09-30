@@ -101,6 +101,8 @@
 .home-page .role-line h3,.home-page .community-copy h3{font-size:clamp(20px,1.7vw,24px)}
 .home-page .role-line time,.home-page .community-row time{font-size:11px;letter-spacing:.06em}
 .home-page .competition-list{counter-reset:competition}
+.home-page .education-community{padding-bottom:clamp(38px,3.2vw,48px)}
+.home-page .competition-section{padding-top:clamp(38px,3.2vw,48px)}
 .home-page .competition-list li{counter-increment:competition;grid-template-columns:40px minmax(0,1fr) auto;column-gap:22px;padding:23px 8px}
 .home-page .competition-list li::before{content:counter(competition,decimal-leading-zero);grid-row:1/3;align-self:start;padding-top:4px;color:var(--accent);font:700 11px "Space Mono",monospace}
 .home-page .competition-heading{grid-column:2/4}
@@ -176,6 +178,8 @@
   .home-page .hero-links{gap:8px}
   .home-page .hero-links a{padding:10px 13px}
   .home-page .section{padding-block:58px}
+  .home-page .education-community{padding-bottom:34px}
+  .home-page .competition-section{padding-top:34px}
   .home-page .publication-entry{padding:23px 19px}
   .home-page .publication-entry h3{font-size:22px}
   .home-page .experience-card,.home-page .experience-card.featured,.home-page .community-row,.home-page .community-row:first-child,.home-page .education-row{grid-template-columns:52px minmax(0,1fr)!important;gap:13px!important;padding:22px 2px!important}
