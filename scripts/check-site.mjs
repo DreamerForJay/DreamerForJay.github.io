@@ -66,7 +66,7 @@ if (/globe-card|globe-canvas|js\/globe\.js/i.test(homeHtml)) fail("index.html", 
 if (!/class="competition-list"/.test(homeHtml)) fail("index.html", "competition list is missing");
 if (/id="projects"|href="#projects"/.test(homeHtml)) fail("index.html", "the separate projects section must be removed");
 if ((homeHtml.match(/class="competition-heading"/g) || []).length !== 4) fail("index.html", "expected four named competitions");
-if (!/data-i18n="awsCompetition">AWS 黑客松/.test(homeHtml)) fail("index.html", "AWS Hackathon must appear in the competition list");
+if (!/data-i18n="awsCompetition">AIWave｜AWS Taiwan × DIGITIMES 生成式 AI 應用黑客松/.test(homeHtml)) fail("index.html", "AIWave AWS hackathon must appear in the competition list");
 if (!/id="research"[\s\S]*?GEMO3D/.test(homeHtml)) fail("index.html", "GEMO3D research entry is missing");
 if (!/data-i18n="paperTitle"/.test(homeHtml)) fail("index.html", "GEMO3D title must support language switching");
 if (/class="publication-metrics"/.test(homeHtml)) fail("index.html", "GEMO3D research metrics should stay hidden");
