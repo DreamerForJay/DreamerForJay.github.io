@@ -19,7 +19,8 @@ for (const file of htmlFiles) {
     [/<title>[^<]+<\/title>/i, "missing title"],
     [/<meta\s+name="description"\s+content="[^"]+"/i, "missing meta description"],
     [/<meta\s+name="author"\s+content="[^"]+"/i, "missing author metadata"],
-    [/<link\s+rel="canonical"\s+href="https:\/\/dreamerforjay\.github\.io\/[^"]*"/i, "missing production canonical URL"],
+    [/<link\s+rel="canonical"\s+href="https:\/\/xn--zwq108c\.tw\/[^"]*"/i, "missing custom-domain canonical URL"],
+    [/<meta\s+name="robots"\s+content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"/i, "missing crawler preview directives"],
     [/<meta\s+property="og:image:alt"\s+content="[^"]+"/i, "missing Open Graph image alt text"],
     [/<meta\s+name="twitter:title"\s+content="[^"]+"/i, "missing Twitter title"],
     [/<link\s+rel="alternate"\s+type="application\/rss\+xml"/i, "missing RSS discovery link"],
@@ -61,6 +62,8 @@ for (const file of htmlFiles) {
 }
 
 const homeHtml = readFileSync(resolve(root, "index.html"), "utf8");
+if (!/"@type":"ProfilePage"/.test(homeHtml)) fail("index.html", "ProfilePage structured data is missing");
+if (!/"@id":"https:\/\/xn--zwq108c\.tw\/#person"/.test(homeHtml)) fail("index.html", "Person identity must use the custom domain");
 if (/<sv-agent\b|id="avatar-start"|id="avatar-stage"/i.test(homeHtml)) fail("index.html", "AI avatar must be removed from the homepage");
 if (/globe-card|globe-canvas|js\/globe\.js/i.test(homeHtml)) fail("index.html", "interactive globe must be removed from the homepage");
 if (!/class="competition-list"/.test(homeHtml)) fail("index.html", "competition list is missing");
@@ -100,13 +103,13 @@ if (responsiveBlocks > 16) fail("css", `too many max-width media blocks: ${respo
 
 const sitemap = readFileSync(resolve(root, "sitemap.xml"), "utf8");
 for (const file of htmlFiles) {
-  const url = file === "index.html" ? "https://dreamerforjay.github.io/" : `https://dreamerforjay.github.io/${file}`;
+  const url = file === "index.html" ? "https://xn--zwq108c.tw/" : `https://xn--zwq108c.tw/${file}`;
   if (!sitemap.includes(`<loc>${url}</loc>`)) fail("sitemap.xml", `missing ${url}`);
 }
 
 const feed = readFileSync(resolve(root, "feed.xml"), "utf8");
 if (!feed.includes("<rss version=\"2.0\"")) fail("feed.xml", "missing RSS 2.0 root");
-if (!feed.includes("https://dreamerforjay.github.io/blog-competition.html")) fail("feed.xml", "missing published article");
+if (!feed.includes("https://xn--zwq108c.tw/blog-competition.html")) fail("feed.xml", "missing published article on the custom domain");
 try { JSON.parse(readFileSync(resolve(root, "manifest.webmanifest"), "utf8")); } catch { fail("manifest.webmanifest", "invalid JSON"); }
 
 if (failures.length) {

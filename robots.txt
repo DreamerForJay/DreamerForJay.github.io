@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dreamerforjay.github.io/sitemap.xml
+Sitemap: https://xn--zwq108c.tw/sitemap.xml

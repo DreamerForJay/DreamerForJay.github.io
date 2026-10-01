@@ -1,11 +1,11 @@
 # Chieh-Lun Yang — Portfolio
 
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-live-2fd8c0?logo=github)](https://dreamerforjay.github.io/)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-live-2fd8c0?logo=github)](https://xn--zwq108c.tw/)
 [![Site quality](https://github.com/DreamerForJay/DreamerForJay.github.io/actions/workflows/quality.yml/badge.svg)](https://github.com/DreamerForJay/DreamerForJay.github.io/actions/workflows/quality.yml)
 
 Personal portfolio and blog of **Chieh-Lun Yang (楊杰倫)**, a Computer Science student focused on applied AI, software testing, product development, and technical communities.
 
-**Live site:** [dreamerforjay.github.io](https://dreamerforjay.github.io/)
+**Live site:** [杰倫.tw](https://xn--zwq108c.tw/)
 
 ## Highlights
 
@@ -99,7 +99,7 @@ GitHub Pages publishes the repository root from the `main` branch. Pushing to `m
 Production URL:
 
 ```text
-https://dreamerforjay.github.io/
+https://xn--zwq108c.tw/
 ```
 
 When adding a new public page, also add its canonical URL to `sitemap.xml`.
