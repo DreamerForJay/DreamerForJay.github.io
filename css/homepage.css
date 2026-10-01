@@ -109,7 +109,12 @@
 .home-page .credentials-heading h3{margin:0;font-size:clamp(25px,2.5vw,36px);line-height:1.2}
 .home-page .credentials-heading>p{max-width:48ch;margin:0;color:var(--muted);line-height:1.65}
 .home-page .credential-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:0;padding:0;list-style:none}
-.home-page .credential-list li{display:flex;justify-content:space-between;gap:24px;min-width:0;padding:22px 24px;border:1px solid var(--line);border-radius:16px;background:color-mix(in srgb,var(--surface) 78%,transparent)}
+.home-page .credential-list li{display:grid;grid-template-columns:54px minmax(0,1fr) auto;align-items:center;gap:18px;min-width:0;padding:20px 22px;border:1px solid var(--line);border-radius:16px;background:color-mix(in srgb,var(--surface) 78%,transparent)}
+.home-page .credential-logo{display:grid;place-items:center;width:54px;height:54px;padding:8px;border:1px solid color-mix(in srgb,var(--line) 78%,#fff);border-radius:13px;background:#fff;overflow:hidden}
+.home-page .credential-logo img{display:block;width:100%;height:100%;object-fit:contain}
+.home-page .credential-logo-nvidia{padding:5px}
+.home-page .credential-logo-google{padding:11px}
+.home-page .credential-copy{min-width:0}
 .home-page .credential-issuer{display:block;margin-bottom:8px;color:var(--accent);font:700 10px "Space Mono",monospace;letter-spacing:.1em}
 .home-page .credential-list h4{margin:0;font-size:17px;line-height:1.45}
 .home-page .credential-list time{flex:none;color:var(--muted);font:700 10px "Space Mono",monospace;letter-spacing:.06em;white-space:nowrap}
@@ -193,8 +198,9 @@
   .home-page .education-community{padding-bottom:34px}
   .home-page .competition-section{padding-top:34px}
   .home-page .credentials-block{margin-top:30px;padding-top:26px}
-  .home-page .credential-list li{display:block;padding:19px}
-  .home-page .credential-list time{display:block;margin-top:12px;white-space:normal}
+  .home-page .credential-list li{grid-template-columns:48px minmax(0,1fr);gap:14px;padding:18px}
+  .home-page .credential-logo{width:48px;height:48px;border-radius:12px}
+  .home-page .credential-list time{grid-column:2;display:block;margin-top:-2px;white-space:normal}
   .home-page .publication-entry{padding:23px 19px}
   .home-page .publication-entry h3{font-size:22px}
   .home-page .experience-card,.home-page .experience-card.featured,.home-page .community-row,.home-page .community-row:first-child,.home-page .education-row{grid-template-columns:52px minmax(0,1fr)!important;gap:13px!important;padding:22px 2px!important}
