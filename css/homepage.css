@@ -69,8 +69,8 @@
 /* Academic portfolio: quiet canvas, consistent reading width and stronger hierarchy. */
 .home-page{background-image:radial-gradient(ellipse 75% 550px at 50% -180px,color-mix(in srgb,var(--accent) 8%,transparent),transparent 80%);background-attachment:scroll}
 .home-page .ambient{display:none}
-.home-page .hero,.home-page main,.home-page .footer{width:min(1220px,calc(100% - 112px))}
-.home-page .hero{grid-template-columns:minmax(0,1.16fr) minmax(320px,.84fr);gap:clamp(52px,6vw,100px);padding:132px 0 88px}
+.home-page .hero,.home-page main,.home-page .footer{width:min(1540px,calc(100% - clamp(64px,7vw,144px)))}
+.home-page .hero{grid-template-columns:minmax(0,1.16fr) minmax(320px,.84fr);gap:clamp(52px,5vw,88px);padding:112px 0 64px}
 .home-page .hero h1{font-size:clamp(68px,7vw,104px);line-height:1;letter-spacing:-.075em;margin:23px 0 28px}
 .home-page .hero h1 small{margin-top:17px;letter-spacing:.19em}
 .home-page .hero .hero-focus{max-width:650px;font-size:clamp(24px,2.1vw,32px);line-height:1.34;letter-spacing:-.025em}
@@ -81,7 +81,7 @@
 .home-page .hero-links a:first-child:hover,.home-page .hero-links a:first-child:focus-visible{background:var(--text);border-color:var(--text);color:var(--bg)}
 .home-page .hero-portrait{max-width:400px;aspect-ratio:1;padding:6px;border-color:color-mix(in srgb,var(--accent) 38%,var(--line));border-radius:50%;background:var(--surface);box-shadow:0 16px 36px rgba(0,0,0,.16)}
 .home-page .hero-portrait img{height:auto;aspect-ratio:1;border-radius:50%;object-fit:contain;object-position:center}
-.home-page .section{padding-block:clamp(66px,6vw,88px)}
+.home-page .section{padding-block:clamp(52px,4.5vw,72px)}
 .home-page .section-kicker{margin-bottom:23px;letter-spacing:.18em}
 .home-page .intro-grid{grid-template-columns:minmax(210px,.42fr) minmax(0,.58fr);gap:clamp(48px,7vw,100px)}
 .home-page .intro-grid>p{max-width:64ch;font-size:clamp(17px,1.35vw,19px);line-height:1.85}
@@ -112,8 +112,8 @@
 .home-page .role-line h3,.home-page .community-copy h3{font-size:clamp(20px,1.7vw,24px)}
 .home-page .role-line time,.home-page .community-row time{font-size:11px;letter-spacing:.06em}
 .home-page .competition-list{counter-reset:competition}
-.home-page .education-community{padding-bottom:clamp(52px,4vw,68px)}
-.home-page .credentials-section,.home-page .competition-section{padding-block:clamp(52px,4vw,68px)}
+.home-page .education-community{padding-bottom:clamp(48px,4vw,62px)}
+.home-page .credentials-section,.home-page .competition-section{padding-block:clamp(48px,4vw,62px)}
 .home-page .credentials-section .section-heading-row{margin-bottom:28px}
 .home-page .credential-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:0;padding:0;list-style:none}
 .home-page .credential-list li{display:grid;grid-template-columns:54px minmax(0,1fr) auto;align-items:center;gap:18px;min-width:0;padding:20px 22px;border:1px solid var(--line);border-radius:16px;background:color-mix(in srgb,var(--surface) 78%,transparent)}
