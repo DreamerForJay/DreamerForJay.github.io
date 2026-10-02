@@ -11,7 +11,7 @@
   const mobilePipeline = matchMedia('(max-width: 900px)');
   const sectionLinks = [...menu.querySelectorAll('a[href^="#"]')];
   const homeLink = menu.querySelector('a[href="index.html"]');
-  const labels = { about: ['ABOUT', '01'], research: ['RESEARCH', '02'], experience: ['EXPERIENCE', '03'], education: ['EDUCATION', '04'], competitions: ['COMPETITIONS', '05'], contact: ['CONTACT', '07'] };
+  const labels = { about: ['ABOUT', '01'], research: ['RESEARCH', '02'], experience: ['EXPERIENCE', '03'], education: ['EDUCATION', '04'], credentials: ['CREDENTIALS', '05'], competitions: ['COMPETITIONS', '06'], contact: ['CONTACT', '07'] };
   const setState = (open) => toggle.setAttribute('aria-expanded', String(open));
   const setCurrent = (id) => {
     const home = id === 'home';

@@ -75,7 +75,7 @@ if (!/data-i18n="paperTitle"/.test(homeHtml)) fail("index.html", "GEMO3D title m
 if (/class="publication-metrics"/.test(homeHtml)) fail("index.html", "GEMO3D research metrics should stay hidden");
 if (!/<nav class="scroll-pipeline"/.test(homeHtml)) fail("index.html", "scroll chapter navigation is missing");
 const pipelineTargets = [...homeHtml.matchAll(/class="scroll-pipeline-stop"[^>]*href="#([^"]+)"/g)].map((match) => match[1]);
-if (pipelineTargets.join(",") !== "top,about,research,experience,education,competitions,contact") fail("index.html", "scroll pipeline must link to every page chapter in order");
+if (pipelineTargets.join(",") !== "top,about,research,experience,education,credentials,competitions,contact") fail("index.html", "scroll pipeline must link to every page chapter in order");
 for (const target of pipelineTargets) if (!homeHtml.includes(`id="${target}"`)) fail("index.html", `scroll pipeline target #${target} is missing`);
 if (!/href="https:\/\/drive\.google\.com\/file\/d\/1oeJrZB3Lpl4byPH0ESviKNsMiRfYq4e7\/view\?usp=sharing"[^>]*>CV</.test(homeHtml)) fail("index.html", "hero CV link is missing");
 if (!/data-i18n="paperCandidate"/.test(homeHtml)) fail("index.html", "research entry is missing the Best Paper Candidate distinction");
