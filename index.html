@@ -37,7 +37,7 @@
   <link rel="stylesheet" href="css/portfolio.css?v=20260924-3">
   <link rel="stylesheet" href="css/editorial.css?v=20260823-4">
   <link rel="stylesheet" href="css/responsive.css?v=20260825-3">
-  <link rel="stylesheet" href="css/homepage.css?v=20261002-1">
+  <link rel="stylesheet" href="css/homepage.css?v=20261002-2">
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://xn--zwq108c.tw/#website","url":"https://xn--zwq108c.tw/","name":"Chieh-Lun Yang","alternateName":["楊杰倫","杰倫.tw"],"description":"Research portfolio of Chieh-Lun Yang, focused on computer vision, applied AI, and software testing.","inLanguage":["zh-Hant","en"],"publisher":{"@id":"https://xn--zwq108c.tw/#person"}},{"@type":"ProfilePage","@id":"https://xn--zwq108c.tw/#profile","url":"https://xn--zwq108c.tw/","name":"楊杰倫 Chieh-Lun Yang｜Computer Vision & Applied AI","description":"Research portfolio featuring GEMO3D, DFDS, computer vision, applied AI, and engineering experience.","dateModified":"2026-10-02","inLanguage":["zh-Hant","en"],"isPartOf":{"@id":"https://xn--zwq108c.tw/#website"},"mainEntity":{"@id":"https://xn--zwq108c.tw/#person"},"primaryImageOfPage":{"@id":"https://xn--zwq108c.tw/#portrait"}},{"@type":"ImageObject","@id":"https://xn--zwq108c.tw/#portrait","contentUrl":"https://xn--zwq108c.tw/assets/profile/chieh-lun-yang.jpg","caption":"Portrait of Chieh-Lun Yang","width":640,"height":640},{"@type":"Person","@id":"https://xn--zwq108c.tw/#person","name":"Chieh-Lun Yang","alternateName":"楊杰倫","url":"https://xn--zwq108c.tw/","image":{"@id":"https://xn--zwq108c.tw/#portrait"},"description":"Computer Science student and researcher working on computer vision, applied AI, and software validation.","subjectOf":{"@id":"https://xn--zwq108c.tw/research/#profile"},"sameAs":["https://github.com/DreamerForJay","https://www.linkedin.com/in/chieh-lun-yang/","https://www.instagram.com/_jay_0919/","https://medium.com/@cl.yang04","https://www.youtube.com/@JAY-uc5um"],"jobTitle":["Computer Science Student","Research Intern","Part-time Research Assistant"],"worksFor":[{"@type":"Organization","name":"Industrial Technology Research Institute","url":"https://www.itri.org.tw/"},{"@type":"CollegeOrUniversity","name":"National Changhua University of Education","url":"https://www.ncue.edu.tw/"}],"affiliation":{"@type":"CollegeOrUniversity","name":"National Changhua University of Education","sameAs":"https://www.ncue.edu.tw/"},"knowsAbout":["Computer Vision","Monocular 3D Object Detection","Generative AI","Robotics","Vision-Language Models","Speech AI","Software Engineering"],"award":["CVGIP 2026 Best Paper Candidate","2025 Corning Innovation Competition Excellence Award"]}]}</script>
 </head>
 <body class="home-page">
@@ -80,18 +80,30 @@
     <section class="section research-section reveal" id="research" aria-labelledby="research-title">
       <div class="section-heading-row"><div><p class="section-kicker">RESEARCH <span>02</span></p><h2 id="research-title" data-i18n="researchTitle">研究成果</h2></div></div>
       <article class="publication-entry">
-        <div class="publication-meta"><span>CVGIP 2026</span><span class="publication-candidate" data-i18n="paperCandidate">最佳論文候選</span></div>
-        <h3 data-i18n="paperTitle">GEMO3D：結合深度學習感知、相機幾何與投影高度比例補償之單目 3D 車輛偵測方法</h3>
-        <p class="publication-authors">Yu-Chiao Chang · Chunghui Kuo · <strong>Chieh-Lun Yang</strong> · Ing-Chau Chang</p>
-        <p class="publication-summary" data-i18n="paperSummary">將深度學習感知、相機幾何與投影高度比例補償整合成可解釋的單目 3D 車輛偵測流程，並於 CARLA 場景評估。</p>
-        <div class="publication-actions"><a class="publication-link" href="https://drive.google.com/file/d/1hqpspPz32pJ793_-s1BeKXVpCAPegX2W/view?usp=sharing" target="_blank" rel="noopener" data-i18n="paperPdf">閱讀論文 PDF</a><a class="publication-link" href="https://xn--zwq108c.tw/GEMO3D/" target="_blank" rel="noopener" data-i18n="paperProject">專案頁面</a><a class="publication-link" href="https://youtu.be/WyC59Sddipc" target="_blank" rel="noopener" data-i18n="paperVideo">介紹影片</a><a class="publication-link" href="https://cvgip2026.stust.edu.tw/" target="_blank" rel="noopener" data-i18n="paperVenue">CVGIP 2026 研討會</a></div>
+        <a class="publication-preview publication-preview-video" href="https://youtu.be/WyC59Sddipc" target="_blank" rel="noopener" aria-label="Watch the GEMO3D research video on YouTube">
+          <img src="/research/assets/research/gemo3d-preview.jpg" alt="GEMO3D monocular 3D vehicle detection preview" width="1200" height="630" loading="lazy" decoding="async">
+          <span class="publication-preview-action" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7L8 5Z"/></svg><span data-i18n="paperVideo">介紹影片</span></span>
+        </a>
+        <div class="publication-content">
+          <div class="publication-meta"><span>CVGIP 2026</span><span class="publication-candidate" data-i18n="paperCandidate">最佳論文候選</span></div>
+          <h3 data-i18n="paperTitle">GEMO3D：結合深度學習感知、相機幾何與投影高度比例補償之單目 3D 車輛偵測方法</h3>
+          <p class="publication-authors">Yu-Chiao Chang · Chunghui Kuo · <strong>Chieh-Lun Yang</strong> · Ing-Chau Chang</p>
+          <p class="publication-summary" data-i18n="paperSummary">將深度學習感知、相機幾何與投影高度比例補償整合成可解釋的單目 3D 車輛偵測流程，並於 CARLA 場景評估。</p>
+          <div class="publication-actions"><a class="publication-link" href="https://drive.google.com/file/d/1hqpspPz32pJ793_-s1BeKXVpCAPegX2W/view?usp=sharing" target="_blank" rel="noopener" data-i18n="paperPdf">閱讀論文 PDF</a><a class="publication-link" href="https://xn--zwq108c.tw/GEMO3D/" target="_blank" rel="noopener" data-i18n="paperProject">專案頁面</a><a class="publication-link" href="https://youtu.be/WyC59Sddipc" target="_blank" rel="noopener" data-i18n="paperVideo">介紹影片</a><a class="publication-link" href="https://cvgip2026.stust.edu.tw/" target="_blank" rel="noopener" data-i18n="paperVenue">CVGIP 2026 研討會</a></div>
+        </div>
       </article>
       <article class="publication-entry">
-        <div class="publication-meta"><span>2026</span><span class="publication-candidate" data-i18n="dfdsStatus">進行中研究</span></div>
-        <h3>DFDS: Color-Aware Monocular Defocus Vehicle Distance Estimation with AI Segmentation and Physical Optics</h3>
-        <p class="publication-authors" data-i18n="dfdsVenue">2026 全國大專院校產學創新實作競賽</p>
-        <p class="publication-summary" data-i18n="dfdsSummary">單目測距在不同車色下，常因對比與感知清晰度差異而失準。DFDS 以 Segment Anything 分割車輛區域，從後對焦單張影像的散焦模糊出發，結合物理光學模型、CIECAM02 感知清晰度與最佳化色彩通道權重估測車距，並於 CARLA 中驗證其可解釋性與跨車色穩定性。</p>
-        <p class="publication-summary" data-i18n="dfdsResult">成果：紅、綠、藍車輛 RMSE 皆 ≤ 0.38 m，於 RTX 5080 上達 13.44 FPS。</p>
+        <figure class="publication-preview publication-preview-static">
+          <img src="/research/assets/research/dfds-architecture.png" alt="DFDS color-aware monocular vehicle distance estimation method architecture" width="1555" height="710" loading="lazy" decoding="async">
+          <figcaption data-i18n="dfdsPreview">DFDS 方法架構</figcaption>
+        </figure>
+        <div class="publication-content">
+          <div class="publication-meta"><span>2026</span><span class="publication-candidate" data-i18n="dfdsStatus">進行中研究</span></div>
+          <h3>DFDS: Color-Aware Monocular Defocus Vehicle Distance Estimation with AI Segmentation and Physical Optics</h3>
+          <p class="publication-authors" data-i18n="dfdsVenue">2026 全國大專院校產學創新實作競賽</p>
+          <p class="publication-summary" data-i18n="dfdsSummary">單目測距在不同車色下，常因對比與感知清晰度差異而失準。DFDS 以 Segment Anything 分割車輛區域，從後對焦單張影像的散焦模糊出發，結合物理光學模型、CIECAM02 感知清晰度與最佳化色彩通道權重估測車距，並於 CARLA 中驗證其可解釋性與跨車色穩定性。</p>
+          <p class="publication-summary" data-i18n="dfdsResult">成果：紅、綠、藍車輛 RMSE 皆 ≤ 0.38 m，於 RTX 5080 上達 13.44 FPS。</p>
+        </div>
       </article>
     </section>
 
