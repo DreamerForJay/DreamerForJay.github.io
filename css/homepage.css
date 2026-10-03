@@ -122,9 +122,6 @@
 .home-page .credential-logo-nvidia{padding:5px}
 .home-page .credential-logo-google{padding:11px}
 .home-page .credential-logo-google img{transform:scale(1.12)}
-.home-page .community-row-no-badge{grid-template-columns:minmax(0,1fr) auto!important}
-.home-page .community-row-no-badge .community-copy{grid-column:1}
-.home-page .community-row-no-badge time{grid-column:2}
 .home-page .event-text-badge{font-size:10px;letter-spacing:.04em;line-height:1.25;text-align:center}
 .home-page .credential-copy{min-width:0}
 .home-page .credential-issuer{display:block;margin-bottom:8px;color:var(--accent);font:700 10px "Space Mono",monospace;letter-spacing:.1em}
