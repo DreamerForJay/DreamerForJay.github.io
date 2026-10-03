@@ -86,11 +86,13 @@ for (const url of ["https://medium.com/@cl.yang04", "https://www.youtube.com/@JA
 if (!/<nav class="hero-links"[^>]*>[\s\S]*?href="https:\/\/www\.linkedin\.com\/in\/chieh-lun-yang\/"/.test(homeHtml)) fail("index.html", "hero LinkedIn link is missing");
 if ((homeHtml.match(/data-i18n="taRole"/g) || []).length !== 1) fail("index.html", "teaching assistant must appear exactly once in experience");
 if (/data-i18n="educationTa"|<article class="community-row reveal">[\s\S]*?Teaching Assistant/.test(homeHtml)) fail("index.html", "teaching assistant must not be duplicated in education or community");
-if (!/data-i18n="itriExposure"/.test(homeHtml)) fail("index.html", "ITRI anticipated research exposure is missing");
+if (!/data-i18n="itriExposure"/.test(homeHtml)) fail("index.html", "ITRI research experience is missing");
+if (/預計接觸方向|Anticipated research exposure/.test(homeHtml)) fail("index.html", "ITRI experience must use current, professional wording");
 if (!/data-i18n="exp1c"/.test(homeHtml)) fail("index.html", "TMYTEK instrumentation experience is missing");
 if (!/class="experience-detail-career-ta"/.test(homeHtml)) fail("index.html", "104 career-course teaching assistant experience is missing");
 if (/NCUE<br>TFSA/.test(homeHtml)) fail("index.html", "transfer-student association badge should be removed");
 if (!/credential-logo-google[\s\S]*?alt="Google for Education logo"/.test(homeHtml)) fail("index.html", "Google credential logo needs an accessible label");
+if (!/data-i18n="bcupTitle">中企盃/.test(homeHtml)) fail("index.html", "Intercollegiate Business Administration Cup staff experience is missing");
 
 const articleHtml = readFileSync(resolve(root, "blog-competition.html"), "utf8");
 if (!/assets\/social\/blog-competition\.png/.test(articleHtml)) fail("blog-competition.html", "missing dedicated social share image");
