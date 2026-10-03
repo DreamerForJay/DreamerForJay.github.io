@@ -8,6 +8,7 @@
 
   const translations = {
     zh: {
+      ailSummary:"結合自然語言需求解析與可追溯的公開資料，協助使用者比較符合預算的日常生活選項。",liveDemo:"作品展示",competitionWebsite:"賽事官網",
       available:"OPEN TO COLLABORATION · 2026",surname:"楊杰倫",
       headline:"電腦視覺 · AI 應用 · 軟體測試 · 產品開發",
       intro:"彰師大資訊工程學系學生，現於工研院擔任研究實習生，並參與國科會補助研究計畫。",
@@ -28,6 +29,7 @@
       contactTitle:"歡迎交流合作。",qrTitle:"掃描查看所有聯絡方式",qrBody:"用手機相機掃描，或直接點下方連結。"
     },
     en: {
+      ailSummary:"Combines natural-language requirement parsing with traceable public data to help users compare everyday options within their budget.",liveDemo:"Live demo",competitionWebsite:"Competition website",
       available:"OPEN TO COLLABORATION · 2026",surname:"楊杰倫",
       headline:"Computer Vision · Applied AI · Software Testing · Product Development",
       intro:"Computer Science student at NCUE, Research Intern at ITRI, and part-time assistant on an NSTC-funded research project.",

@@ -132,6 +132,9 @@
 .home-page .competition-heading{grid-column:2/4}
 .home-page .competition-details{grid-column:2}
 .home-page .competition-action{grid-column:3;grid-row:2;min-height:44px}
+.home-page .competition-summary{grid-column:2/-1;margin:0;color:var(--muted);font-size:15px;line-height:1.7;overflow-wrap:anywhere}
+.home-page .competition-actions{grid-column:2/-1;display:flex;flex-wrap:wrap;gap:0 24px;min-width:0}
+.home-page .competition-actions .competition-action{min-width:44px;white-space:normal;overflow-wrap:anywhere}
 .home-page .footer{padding-top:72px}
 .home-page .scroll-pipeline{right:clamp(10px,1.4vw,28px)}
 .home-page .scroll-pipeline-stop span{width:28px;height:28px;font-size:9px}
